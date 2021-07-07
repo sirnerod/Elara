@@ -1,0 +1,180 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Smartsheets2",
+    "description": "API for api.smartsheet.com",
+    "version": "0.0.0"
+  },
+  "host": "api.smartsheet.com",
+  "basePath": "/2.0",
+  "schemes": [ "https" ],
+  "paths": {
+    "/users/me": {
+      "get": {
+        "tags": [ "Users" ],
+        "description": "Me",
+        "operationId": "me",
+        "produces": [ "application/json" ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Authorization",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": { "$ref": "#/definitions/User" },
+            "examples": {
+              "application/json": {
+                "id": 8970282368034692,
+                "email": "svcsmtshtapierma@elara.com",
+                "firstName": "Smartsheet",
+                "lastName": "Admin",
+                "locale": "en_US",
+                "timeZone": "US/Pacific",
+                "account": {
+                  "name": "Elara Caring",
+                  "id": 3818295552960388
+                },
+                "admin": true,
+                "licensedSheetCreator": true,
+                "groupAdmin": false,
+                "resourceViewer": true,
+                "alternateEmails": [],
+                "sheetCount": 0,
+                "lastLogin": "2021-07-07T16:02:58Z",
+                "title": "",
+                "department": "",
+                "company": "",
+                "workPhone": "",
+                "mobilePhone": "",
+                "role": ""
+              }
+            }
+          }
+        },
+        "security": []
+      }
+    }
+  },
+  "definitions": {
+    "User": {
+      "description": "Model for User",
+      "required": [ "account" ],
+      "properties": {
+        "account": {
+          "$ref": "#/definitions/Account",
+          "x-example": "{\n  \"name\": \"Elara Caring\",\n  \"id\": 3818295552960388\n}"
+        },
+        "admin": {
+          "type": "boolean",
+          "x-example": "true"
+        },
+        "alternateEmails": {
+          "type": "array",
+          "items": { "type": "string" },
+          "x-example": "[]"
+        },
+        "company": {
+          "type": "string",
+          "x-example": ""
+        },
+        "department": {
+          "type": "string",
+          "x-example": ""
+        },
+        "email": {
+          "type": "string",
+          "x-example": "svcsmtshtapierma@elara.com"
+        },
+        "firstName": {
+          "type": "string",
+          "x-example": "Smartsheet"
+        },
+        "groupAdmin": {
+          "type": "boolean",
+          "x-example": "false"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int32",
+          "x-example": "8970282368034692"
+        },
+        "lastLogin": {
+          "type": "string",
+          "format": "date-time",
+          "x-example": "2021-07-07T16:02:58Z"
+        },
+        "lastName": {
+          "type": "string",
+          "x-example": "Admin"
+        },
+        "licensedSheetCreator": {
+          "type": "boolean",
+          "x-example": "true"
+        },
+        "locale": {
+          "type": "string",
+          "x-example": "en_US"
+        },
+        "mobilePhone": {
+          "type": "string",
+          "x-example": ""
+        },
+        "resourceViewer": {
+          "type": "boolean",
+          "x-example": "true"
+        },
+        "role": {
+          "type": "string",
+          "x-example": ""
+        },
+        "sheetCount": {
+          "type": "integer",
+          "format": "int32",
+          "x-example": "0"
+        },
+        "timeZone": {
+          "type": "string",
+          "x-example": "US/Pacific"
+        },
+        "title": {
+          "type": "string",
+          "x-example": ""
+        },
+        "workPhone": {
+          "type": "string",
+          "x-example": ""
+        }
+      }
+    },
+    "Account": {
+      "description": "Model for Account",
+      "required": [ "id" ],
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int32",
+          "x-example": "3818295552960388"
+        },
+        "name": {
+          "type": "string",
+          "x-example": "Elara Caring"
+        }
+      }
+    }
+  },
+  "securityDefinitions": {},
+  "security": [],
+  "tags": [
+    {
+      "name": "Users",
+      "description": "Operations about Users"
+    }
+  ]
+}
