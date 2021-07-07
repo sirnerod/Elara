@@ -24,9 +24,9 @@
             "x-example": ""
           },
           {
-            "name": "SheetID",
-            "in": "query",
             "description": "SheetID",
+            "in": "query",
+            "name": "SheetID",
             "required": false,
             "type": "string",
             "x-example": ""
@@ -69,11 +69,9 @@
           "200": {
             "description": "OK",
             "schema": {
-              "$ref": "#/definitions/SheetName"              
-            },
-            "examples": {
-              "application/xml": "<string xmlns=\"http://tempuri.org/\">Elara Caring SHH-BH Payor Master</string>" }
+              "$ref": "#/definitions/SheetName"
             }
+          }
         }
       }
     }
@@ -83,8 +81,11 @@
       "type": "object",
       "properties": {
         "string": {
-          "type":  "string"
+          "type": "string"
         }
+      },
+      "xml": {
+        "namespace": "http://tempuri.org/"
       }
     }
 
