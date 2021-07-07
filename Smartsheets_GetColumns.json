@@ -13,7 +13,7 @@
         "tags": [ "SmartSheet" ],
         "description": "Get columns",
         "operationId": "GetColums",
-        "produces": [ "application/json" ],
+        "produces": [ "application/xml" ],
         "parameters": [
           {
             "name": "Token",
@@ -40,6 +40,39 @@
           }
         },
         "security": []
+      }
+    },
+    "/SmartSheet.asmx/GetSheetNAME": {
+      "get": {
+        "description": "Get Sheet Name",
+        "operationId": "GetSheetNAME",
+        "produces": [ "application/xml" ],
+        "parameters": [
+          {
+            "name": "Token",
+            "in": "query",
+            "description": "Token",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "SheetID",
+            "in": "query",
+            "description": "SheetID",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": { "type": "string" },
+            "examples": {
+              "application/xml": "<string xmlns=\"http://tempuri.org/\">Elara Caring SHH-BH Payor Master</string>" }
+            }
+        }
       }
     }
   },
