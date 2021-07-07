@@ -8,40 +8,40 @@
   "host": "smartsheetapi.azurewebsites.net",
   "schemes": [ "https" ],
   "paths": {
-    "/SmartSheet.asmx/GetColums": {
-      "get": {
-        "tags": [ "SmartSheet" ],
-        "description": "Get columns",
-        "operationId": "GetColums",
-        "produces": [ "application/xml" ],
-        "parameters": [
-          {
-            "name": "Token",
-            "in": "query",
-            "description": "Token",
-            "required": false,
-            "type": "string",
-            "x-example": ""
-          },
-          {
-            "description": "SheetID",
-            "in": "query",
-            "name": "SheetID",
-            "required": false,
-            "type": "string",
-            "x-example": ""
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "schema": { "type": "string" },
-            "examples": { "application/json": "\u003C?xml version=\"1.0\" encoding=\"utf-8\"?\u003E\r\n\u003CDataSet xmlns=\"http://tempuri.org/\"\u003E\r\n    \u003Cxs:schema id=\"SmartSheets\" xmlns=\"\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:msdata=\"urn:schemas-microsoft-com:xml-msdata\"\u003E\r\n        \u003Cxs:element name=\"SmartSheets\" msdata:IsDataSet=\"true\" msdata:UseCurrentLocale=\"true\"\u003E\r\n            \u003Cxs:complexType\u003E\r\n                \u003Cxs:choice minOccurs=\"0\" maxOccurs=\"unbounded\"\u003E\r\n                    \u003Cxs:element name=\"SmartSheet\"\u003E\r\n                        \u003Cxs:complexType\u003E\r\n                            \u003Cxs:sequence\u003E\r\n                                \u003Cxs:element name=\"Name\" type=\"xs:string\" minOccurs=\"0\" /\u003E\r\n                                \u003Cxs:element name=\"Id\" type=\"xs:string\" minOccurs=\"0\" /\u003E\r\n                                \u003Cxs:element name=\"Type\" type=\"xs:string\" minOccurs=\"0\" /\u003E\r\n                            \u003C/xs:sequence\u003E\r\n                        \u003C/xs:complexType\u003E\r\n                    \u003C/xs:element\u003E\r\n                \u003C/xs:choice\u003E\r\n            \u003C/xs:complexType\u003E\r\n        \u003C/xs:element\u003E\r\n    \u003C/xs:schema\u003E\r\n    \u003Cdiffgr:diffgram xmlns:msdata=\"urn:schemas-microsoft-com:xml-msdata\" xmlns:diffgr=\"urn:schemas-microsoft-com:xml-diffgram-v1\"\u003E\r\n        \u003CSmartSheets xmlns=\"\"\u003E\r\n            \u003CSmartSheet diffgr:id=\"SmartSheet1\" msdata:rowOrder=\"0\" diffgr:hasChanges=\"inserted\"\u003E\r\n                \u003CName\u003EContract Name\u003C/Name\u003E\r\n                \u003CId\u003E2386579867101060\u003C/Id\u003E\r\n                \u003CType\u003ETEXT_NUMBER\u003C/Type\u003E\r\n            \u003C/SmartSheet\u003E\r\n\u003C/SmartSheets\u003E\r\n    \u003C/diffgr:diffgram\u003E\r\n\u003C/DataSet\u003E" }
-          }
-        },
-        "security": []
-      }
-    },
+    //"/SmartSheet.asmx/GetColums": {
+    //  "get": {
+    //    "tags": [ "SmartSheet" ],
+    //    "description": "Get columns",
+    //    "operationId": "GetColums",
+    //    "produces": [ "application/xml" ],
+    //    "parameters": [
+    //      {
+    //        "name": "Token",
+    //        "in": "query",
+    //        "description": "Token",
+    //        "required": false,
+    //        "type": "string",
+    //        "x-example": ""
+    //      },
+    //      {
+    //        "description": "SheetID",
+    //        "in": "query",
+    //        "name": "SheetID",
+    //        "required": false,
+    //        "type": "string",
+    //        "x-example": ""
+    //      }
+    //    ],
+    //    "responses": {
+    //      "200": {
+    //        "description": "OK",
+    //        "schema": { "type": "string" },
+    //        "examples": { "application/json": "\u003C?xml version=\"1.0\" encoding=\"utf-8\"?\u003E\r\n\u003CDataSet xmlns=\"http://tempuri.org/\"\u003E\r\n    \u003Cxs:schema id=\"SmartSheets\" xmlns=\"\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:msdata=\"urn:schemas-microsoft-com:xml-msdata\"\u003E\r\n        \u003Cxs:element name=\"SmartSheets\" msdata:IsDataSet=\"true\" msdata:UseCurrentLocale=\"true\"\u003E\r\n            \u003Cxs:complexType\u003E\r\n                \u003Cxs:choice minOccurs=\"0\" maxOccurs=\"unbounded\"\u003E\r\n                    \u003Cxs:element name=\"SmartSheet\"\u003E\r\n                        \u003Cxs:complexType\u003E\r\n                            \u003Cxs:sequence\u003E\r\n                                \u003Cxs:element name=\"Name\" type=\"xs:string\" minOccurs=\"0\" /\u003E\r\n                                \u003Cxs:element name=\"Id\" type=\"xs:string\" minOccurs=\"0\" /\u003E\r\n                                \u003Cxs:element name=\"Type\" type=\"xs:string\" minOccurs=\"0\" /\u003E\r\n                            \u003C/xs:sequence\u003E\r\n                        \u003C/xs:complexType\u003E\r\n                    \u003C/xs:element\u003E\r\n                \u003C/xs:choice\u003E\r\n            \u003C/xs:complexType\u003E\r\n        \u003C/xs:element\u003E\r\n    \u003C/xs:schema\u003E\r\n    \u003Cdiffgr:diffgram xmlns:msdata=\"urn:schemas-microsoft-com:xml-msdata\" xmlns:diffgr=\"urn:schemas-microsoft-com:xml-diffgram-v1\"\u003E\r\n        \u003CSmartSheets xmlns=\"\"\u003E\r\n            \u003CSmartSheet diffgr:id=\"SmartSheet1\" msdata:rowOrder=\"0\" diffgr:hasChanges=\"inserted\"\u003E\r\n                \u003CName\u003EContract Name\u003C/Name\u003E\r\n                \u003CId\u003E2386579867101060\u003C/Id\u003E\r\n                \u003CType\u003ETEXT_NUMBER\u003C/Type\u003E\r\n            \u003C/SmartSheet\u003E\r\n\u003C/SmartSheets\u003E\r\n    \u003C/diffgr:diffgram\u003E\r\n\u003C/DataSet\u003E" }
+    //      }
+    //    },
+    //    "security": []
+    //  }
+    //},
     "/SmartSheet.asmx/GetSheetNAME": {
       "get": {
         "description": "Get Sheet Name",
@@ -68,28 +68,26 @@
         "responses": {
           "200": {
             "description": "OK",
-            "schema": {
-              "$ref": "#/definitions/SheetName"
-            }
+            "schema": { "type": "string" },
+            "examples": { "application/xml": "\u003Cstring xmlns=\"http://tempuri.org/\"\u003EElara Caring SHH-BH Payor Master\u003C/string\u003E" }
           }
         }
       }
     }
   },
-  "definitions": {
-    "SheetName": {
-      "type": "object",
-      "properties": {
-        "string": {
-          "type": "string"
-        }
-      },
-      "xml": {
-        "namespace": "http://tempuri.org/"
-      }
-    }
-
-  },
+  //"definitions": {
+  //  "SheetName": {
+  //    "type": "object",
+  //    "properties": {
+  //      "string": {
+  //        "type": "string"
+  //      }
+  //    },
+  //    "xml": {
+  //      "namespace": "http://tempuri.org/"
+  //    }
+  //  }
+  //},
   "securityDefinitions": {},
   "security": [],
   "tags": [
