@@ -68,7 +68,9 @@
         "responses": {
           "200": {
             "description": "OK",
-            "schema": { "type": "string" },
+            "schema": {
+              "$ref": "#/definitions/SheetName"              
+            },
             "examples": {
               "application/xml": "<string xmlns=\"http://tempuri.org/\">Elara Caring SHH-BH Payor Master</string>" }
             }
@@ -76,7 +78,17 @@
       }
     }
   },
-  "definitions": {},
+  "definitions": {
+    "SheetName": {
+      "type": "object",
+      "properties": {
+        "string": {
+          "type":  "string"
+        }
+      }
+    }
+
+  },
   "securityDefinitions": {},
   "security": [],
   "tags": [
