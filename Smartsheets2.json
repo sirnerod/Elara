@@ -90,7 +90,7 @@
         "security": []
       }
     },
-    "/sheets/": {
+    "/sheets/{sheetId}": {
       "get": {
         "tags": [ "Sheets" ],
         "description": "Get Sheet Values",
@@ -98,18 +98,10 @@
         "produces": [ "application/json" ],
         "parameters": [
           {
-            "name": "sheetID",
+            "name": "sheetId",
             "in": "path",
-            "description": "sheetID",
+            "description": "sheetId",
             "required": true,
-            "type": "string",
-            "x-example": ""
-          },
-          {
-            "name": "attachments",
-            "in": "query",
-            "description": "attachments",
-            "required": false,
             "type": "string",
             "x-example": ""
           },
@@ -151,6 +143,14 @@
             "description": "Authorization",
             "required": false,
             "default": "Bearer PQFwnCFcqxmVEGKk97sOCUiR024KDS4DvFlXy",
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "attachments",
+            "in": "query",
+            "description": "attachments",
+            "required": false,
             "type": "string",
             "x-example": ""
           }
