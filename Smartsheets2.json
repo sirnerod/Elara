@@ -102,7 +102,7 @@
         },
         "id": {
           "type": "integer",
-          "format": "int32",
+          "format": "int64",
           "x-example": "8970282368034692"
         },
         "lastLogin": {
