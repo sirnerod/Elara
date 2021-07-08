@@ -9,6 +9,216 @@
   "basePath": "/2.0",
   "schemes": [ "https" ],
   "paths": {
+    "/sheets/{sheetId}/rows/{rowId}": {
+      "get": {
+        "tags": [ "Sheets" ],
+        "description": "Get row",
+        "operationId": "getRow",
+        "produces": [ "application/json" ],
+        "parameters": [
+          {
+            "name": "sheetId",
+            "in": "path",
+            "description": "Sheet ID",
+            "required": true,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "rowId",
+            "in": "path",
+            "description": "Row ID",
+            "required": true,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "include",
+            "in": "query",
+            "description": "include",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "exclude",
+            "in": "query",
+            "description": "exclude",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "level",
+            "in": "query",
+            "description": "level",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": { "$ref": "#/definitions/Rows" },
+            "examples": {
+              "application/json": {
+                "id": 2361756178769796,
+                "sheetId": 4583173393803140,
+                "rowNumber": 1,
+                "expanded": true,
+                "cells": [
+                  {
+                    "columnType": "TEXT_NUMBER",
+                    "value": "Revision 1",
+                    "displayValue": "Revision 1",
+                    "columnId": 4583173393803140
+                  },
+                  {
+                    "columnType": "PICKLIST",
+                    "value": "completed",
+                    "displayValue": "completed",
+                    "columnId": 2331373580117892
+                  }
+                ],
+                "createdAt": "2012-07-24T23:10:55-07:00",
+                "modifiedAt": "2012-07-24T23:14:27-07:00"
+              }
+            }
+          }
+        },
+        "security": []
+      }
+    },
+    "/sheets/": {
+      "get": {
+        "tags": [ "Sheets" ],
+        "description": "Get Sheet Values",
+        "operationId": "getSheet",
+        "produces": [ "application/json" ],
+        "parameters": [
+          {
+            "name": "sheetID",
+            "in": "path",
+            "description": "sheetID",
+            "required": true,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "attachments",
+            "in": "query",
+            "description": "attachments",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "crossSheetReferences",
+            "in": "query",
+            "description": "crossSheetReferences",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "discussions",
+            "in": "query",
+            "description": "discussions",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "filters",
+            "in": "query",
+            "description": "filters",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "filterDefinitions",
+            "in": "query",
+            "description": "filterDefinitions",
+            "required": false,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Authorization",
+            "required": false,
+            "default": "Bearer PQFwnCFcqxmVEGKk97sOCUiR024KDS4DvFlXy",
+            "type": "string",
+            "x-example": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": { "$ref": "#/definitions/Sheet" },
+            "examples": {
+              "application/json": {
+                "id": 4583173393803140,
+                "name": "sheet 1",
+                "version": 6,
+                "totalRowCount": 240,
+                "accessLevel": "OWNER",
+                "effectiveAttachmentOptions": [ "EVERNOTE", "GOOGLE_DRIVE", "EGNYTE", "FILE", "ONEDRIVE", "DROPBOX", "BOX_COM" ],
+                "readOnly": true,
+                "ganttEnabled": true,
+                "dependenciesEnabled": true,
+                "resourceManagementEnabled": true,
+                "cellImageUploadEnabled": true,
+                "userSettings": {
+                  "criticalPathEnabled": false,
+                  "displaySummaryTasks": true
+                },
+                "userPermissions": { "summaryPermissions": "ADMIN" },
+                "workspace": {
+                  "id": 825898975642500,
+                  "name": "New Workspace"
+                },
+                "projectSettings": {
+                  "workingDays": [ "MONDAY", "TUESDAY", "WEDNESDAY" ],
+                  "nonWorkingDays": [],
+                  "lengthOfDay": 8
+                },
+                "hasSummaryFields": false,
+                "permalink": "https://app.smartsheet.com/b/home?lx=pWNSDH9itjBXxBzFmyf-5w",
+                "createdAt": "2018-09-24T20:27:57Z",
+                "modifiedAt": "2018-09-26T20:45:08Z",
+                "columns": [
+                  {
+                    "id": 4583173393803140,
+                    "version": 1,
+                    "index": 0,
+                    "primary": true,
+                    "title": "Primary Column",
+                    "type": "TEXT_NUMBER",
+                    "validation": false
+                  },
+                  {
+                    "id": 603843458295684,
+                    "version": 2,
+                    "index": 5,
+                    "title": "New Dropdown Multi Select",
+                    "type": "MULTI_PICKLIST",
+                    "options": [ "Template", "Blog", "Newsletter", "Email", "Press Release", "Advertisement" ],
+                    "validation": false,
+                    "width": 150
+                  }
+                ],
+                "rows": []
+              }
+            }
+          }
+        },
+        "security": []
+      }
+    },
     "/users/me": {
       "get": {
         "tags": [ "Users" ],
@@ -63,6 +273,264 @@
     }
   },
   "definitions": {
+    "Sheet": {
+      "description": "Model for Sheet",
+      "required": [ "accessLevel" ],
+      "properties": {
+        "accessLevel": {
+          "type": "string",
+          "x-example": "OWNER"
+        },
+        "cellImageUploadEnabled": {
+          "type": "boolean",
+          "x-example": "true"
+        },
+        "columns": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/Columns" },
+          "x-example": "[\r\n  {\r\n    \"id\": 4583173393803140,\r\n    \"version\": 1,\r\n    \"index\": 0,\r\n    \"primary\": true,\r\n    \"title\": \"Primary Column\",\r\n    \"type\": \"TEXT_NUMBER\",\r\n    \"validation\": false\r\n  },\r\n  {\r\n    \"id\": 603843458295684,\r\n    \"version\": 2,\r\n    \"index\": 5,\r\n    \"title\": \"New Dropdown Multi Select\",\r\n    \"type\": \"MULTI_PICKLIST\",\r\n    \"options\": [\r\n      \"Template\",\r\n      \"Blog\",\r\n      \"Newsletter\",\r\n      \"Email\",\r\n      \"Press Release\",\r\n      \"Advertisement\"\r\n    ],\r\n    \"validation\": false,\r\n    \"width\": 150\r\n  }\r\n]"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "x-example": "2018-09-24T20:27:57Z"
+        },
+        "dependenciesEnabled": {
+          "type": "boolean",
+          "x-example": "true"
+        },
+        "effectiveAttachmentOptions": {
+          "type": "array",
+          "items": { "type": "string" },
+          "x-example": "[\"EVERNOTE\", \"GOOGLE_DRIVE\", \"EGNYTE\", \"FILE\", \"ONEDRIVE\", \"DROPBOX\", \"BOX_COM\"]"
+        },
+        "ganttEnabled": {
+          "type": "boolean",
+          "x-example": "true"
+        },
+        "hasSummaryFields": {
+          "type": "boolean",
+          "x-example": "false"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int64",
+          "x-example": "4583173393803140"
+        },
+        "modifiedAt": {
+          "type": "string",
+          "format": "date-time",
+          "x-example": "2018-09-26T20:45:08Z"
+        },
+        "name": {
+          "type": "string",
+          "x-example": "sheet 1"
+        },
+        "permalink": {
+          "type": "string",
+          "x-example": "https://app.smartsheet.com/b/home?lx=pWNSDH9itjBXxBzFmyf-5w"
+        },
+        "projectSettings": {
+          "$ref": "#/definitions/ProjectSettings",
+          "x-example": "{\r\n  \"workingDays\": [\r\n    \"MONDAY\",\r\n    \"TUESDAY\",\r\n    \"WEDNESDAY\"\r\n  ],\r\n  \"nonWorkingDays\": [\r\n\r\n  ],\r\n  \"lengthOfDay\": 8\r\n}"
+        },
+        "readOnly": {
+          "type": "boolean",
+          "x-example": "true"
+        },
+        "resourceManagementEnabled": {
+          "type": "boolean",
+          "x-example": "true"
+        },
+        "rows": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/Rows" },
+          "x-example": "[]"
+        },
+        "totalRowCount": {
+          "type": "integer",
+          "format": "int64",
+          "x-example": "240"
+        },
+        "userPermissions": {
+          "$ref": "#/definitions/UserPermissions",
+          "x-example": "{\r\n  \"summaryPermissions\": \"ADMIN\"\r\n}"
+        },
+        "userSettings": {
+          "$ref": "#/definitions/UserSettings",
+          "x-example": "{\r\n  \"criticalPathEnabled\": false,\r\n  \"displaySummaryTasks\": true\r\n}"
+        },
+        "version": {
+          "type": "integer",
+          "format": "int64",
+          "x-example": "6"
+        },
+        "workspace": {
+          "$ref": "#/definitions/Workspace",
+          "x-example": "{\r\n  \"id\": 825898975642500,\r\n  \"name\": \"New Workspace\"\r\n}"
+        }
+      }
+    },
+    "Cells": {
+      "description": "Model for Cells",
+      "required": [ "columnId" ],
+      "properties": {
+        "columnId": {
+          "type": "integer",
+          "format": "int64",
+          "x-example": "4583173393803140"
+        },
+        "columnType": {
+          "type": "string",
+          "x-example": "TEXT_NUMBER"
+        },
+        "displayValue": {
+          "type": "string",
+          "x-example": "Revision 1"
+        },
+        "value": {
+          "type": "string",
+          "x-example": "Revision 1"
+        }
+      }
+    },
+    "Rows": {
+      "description": "Model for Rows",
+      "required": [ "cells" ],
+      "properties": {
+        "cells": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/Cells" },
+          "x-example": "[\n  {\n    \"columnType\": \"TEXT_NUMBER\",\n    \"value\": \"Revision 1\",\n    \"displayValue\": \"Revision 1\",\n    \"columnId\": 4583173393803140\n  },\n  {\n    \"columnType\": \"PICKLIST\",\n    \"value\": \"completed\",\n    \"displayValue\": \"completed\",\n    \"columnId\": 2331373580117892\n  }\n]"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "x-example": "2012-07-24T23:10:55-07:00"
+        },
+        "expanded": {
+          "type": "boolean",
+          "x-example": "true"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int64",
+          "x-example": "2361756178769796"
+        },
+        "modifiedAt": {
+          "type": "string",
+          "format": "date-time",
+          "x-example": "2012-07-24T23:14:27-07:00"
+        },
+        "rowNumber": {
+          "type": "integer",
+          "format": "int64",
+          "x-example": "1"
+        },
+        "sheetId": {
+          "type": "integer",
+          "format": "int64",
+          "x-example": "4583173393803140"
+        }
+      }
+    },
+    "Columns": {
+      "description": "Model for Columns",
+      "required": [ "id" ],
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64",
+          "x-example": "4583173393803140"
+        },
+        "index": {
+          "type": "integer",
+          "format": "int64",
+          "x-example": "0"
+        },
+        "primary": {
+          "type": "boolean",
+          "x-example": "true"
+        },
+        "title": {
+          "type": "string",
+          "x-example": "Primary Column"
+        },
+        "type": {
+          "type": "string",
+          "x-example": "TEXT_NUMBER"
+        },
+        "validation": {
+          "type": "boolean",
+          "x-example": "false"
+        },
+        "version": {
+          "type": "integer",
+          "format": "int64",
+          "x-example": "1"
+        }
+      }
+    },
+    "ProjectSettings": {
+      "description": "Model for ProjectSettings",
+      "required": [ "lengthOfDay" ],
+      "properties": {
+        "lengthOfDay": {
+          "type": "integer",
+          "format": "int64",
+          "x-example": "8"
+        },
+        "nonWorkingDays": {
+          "type": "array",
+          "items": { "type": "string" },
+          "x-example": "[]"
+        },
+        "workingDays": {
+          "type": "array",
+          "items": { "type": "string" },
+          "x-example": "[\"MONDAY\", \"TUESDAY\", \"WEDNESDAY\"]"
+        }
+      }
+    },
+    "Workspace": {
+      "description": "Model for Workspace",
+      "required": [ "id" ],
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64",
+          "x-example": "825898975642500"
+        },
+        "name": {
+          "type": "string",
+          "x-example": "New Workspace"
+        }
+      }
+    },
+    "UserPermissions": {
+      "description": "Model for UserPermissions",
+      "required": [ "summaryPermissions" ],
+      "properties": {
+        "summaryPermissions": {
+          "type": "string",
+          "x-example": "ADMIN"
+        }
+      }
+    },
+    "UserSettings": {
+      "description": "Model for UserSettings",
+      "required": [ "criticalPathEnabled" ],
+      "properties": {
+        "criticalPathEnabled": {
+          "type": "boolean",
+          "x-example": "false"
+        },
+        "displaySummaryTasks": {
+          "type": "boolean",
+          "x-example": "true"
+        }
+      }
+    },
     "User": {
       "description": "Model for User",
       "required": [ "account" ],
@@ -172,6 +640,10 @@
   "securityDefinitions": {},
   "security": [],
   "tags": [
+    {
+      "name": "Sheets",
+      "description": "Operations about Sheets"
+    },
     {
       "name": "Users",
       "description": "Operations about Users"
