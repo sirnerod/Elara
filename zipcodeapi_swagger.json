@@ -11,8 +11,8 @@
     "/rest/{api_key}/info.{format}/{zipcode}/{units}": {
       "get": {
         "tags": [ "Rest" ],
-        "description": "Api key",
-        "operationId": "api_key",
+        "description": "Zip Code Information",
+        "operationId": "ZipCodeInfo",
         "produces": [ "application/json" ],
         "parameters": [
           {
