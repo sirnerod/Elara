@@ -1,0 +1,156 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Zipcodeapi",
+    "description": "API for www.zipcodeapi.com",
+    "version": "0.0.0"
+  },
+  "host": "www.zipcodeapi.com",
+  "schemes": [ "https" ],
+  "paths": {
+    "/rest/{api_key}/info.{format}/{zipcode}/{units}": {
+      "get": {
+        "tags": [ "Rest" ],
+        "description": "Api key",
+        "operationId": "api_key",
+        "produces": [ "application/json" ],
+        "parameters": [
+          {
+            "name": "api_key",
+            "in": "path",
+            "description": "Api key",
+            "required": true,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "zipcode",
+            "in": "path",
+            "description": "Zipcode",
+            "required": true,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "units",
+            "in": "path",
+            "description": "Units",
+            "required": true,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "format",
+            "in": "path",
+            "description": "format",
+            "required": true,
+            "type": "string",
+            "x-example": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": { "$ref": "#/definitions/Location" },
+            "examples": {
+              "application/json": {
+                "zip_code": "90210",
+                "lat": 34.100501,
+                "lng": -118.414908,
+                "city": "Beverly Hills",
+                "state": "CA",
+                "timezone": {
+                  "timezone_identifier": "America/Los_Angeles",
+                  "timezone_abbr": "PDT",
+                  "utc_offset_sec": -25200,
+                  "is_dst": "T"
+                },
+                "acceptable_city_names": [],
+                "area_codes": [ 310, 424 ]
+              }
+            }
+          }
+        },
+        "security": []
+      }
+    }
+  },
+  "definitions": {
+    "Timezone": {
+      "description": "Model for Timezone",
+      "required": [ "is_dst" ],
+      "properties": {
+        "is_dst": {
+          "type": "string",
+          "x-example": "T"
+        },
+        "timezone_abbr": {
+          "type": "string",
+          "x-example": "PDT"
+        },
+        "timezone_identifier": {
+          "type": "string",
+          "x-example": "America/Los_Angeles"
+        },
+        "utc_offset_sec": {
+          "type": "integer",
+          "format": "int32",
+          "x-example": "-25200"
+        }
+      }
+    },
+    "Location": {
+      "description": "Model for Location",
+      "required": [ "acceptable_city_names" ],
+      "properties": {
+        "acceptable_city_names": {
+          "type": "array",
+          "items": { "type": "string" },
+          "x-example": "[]"
+        },
+        "area_codes": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "x-example": "[310, 424]"
+        },
+        "city": {
+          "type": "string",
+          "x-example": "Beverly Hills"
+        },
+        "lat": {
+          "type": "number",
+          "format": "float",
+          "x-example": "34.100501"
+        },
+        "lng": {
+          "type": "number",
+          "format": "float",
+          "x-example": "-118.414908"
+        },
+        "state": {
+          "type": "string",
+          "x-example": "CA"
+        },
+        "timezone": {
+          "$ref": "#/definitions/Timezone",
+          "x-example": "{\n  \"timezone_identifier\": \"America/Los_Angeles\",\n  \"timezone_abbr\": \"PDT\",\n  \"utc_offset_sec\": -25200,\n  \"is_dst\": \"T\"\n}"
+        },
+        "zip_code": {
+          "type": "string",
+          "x-example": "90210"
+        }
+      }
+    }
+  },
+  "securityDefinitions": {},
+  "security": [],
+  "tags": [
+    {
+      "name": "Rest",
+      "description": "Operations about Rest"
+    }
+  ]
+}
