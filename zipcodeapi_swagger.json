@@ -11,8 +11,8 @@
     "/rest/{api_key}/info.{format}/{zipcode}/{units}": {
       "get": {
         "tags": [ "Rest" ],
-        "description": "Zip Code Information",
-        "operationId": "ZipCodeInfo",
+        "description": "Api key",
+        "operationId": "api_key",
         "produces": [ "application/json" ],
         "parameters": [
           {
@@ -73,9 +73,78 @@
         },
         "security": []
       }
+    },
+    "/rest/{api_key}/distance.{format}/{zip_code1}/{zip_code2}/{units}": {
+      "get": {
+        "tags": [ "Rest" ],
+        "description": "Get distance",
+        "operationId": "get_distance",
+        "produces": [ "application/json" ],
+        "parameters": [
+          {
+            "name": "api_key",
+            "in": "path",
+            "description": "Api key",
+            "required": true,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "zip_code1",
+            "in": "path",
+            "description": "Zip code1",
+            "required": true,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "zip_code2",
+            "in": "path",
+            "description": "Zip code2",
+            "required": true,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "units",
+            "in": "path",
+            "description": "Units",
+            "required": true,
+            "type": "string",
+            "x-example": ""
+          },
+          {
+            "name": "format",
+            "in": "path",
+            "description": "format",
+            "required": true,
+            "type": "string",
+            "x-example": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": { "$ref": "#/definitions/Distance" },
+            "examples": { "application/json": { "distance": 91.73 } }
+          }
+        },
+        "security": []
+      }
     }
   },
   "definitions": {
+    "Distance": {
+      "description": "Model for Distance",
+      "required": [ "distance" ],
+      "properties": {
+        "distance": {
+          "type": "number",
+          "format": "float",
+          "x-example": "91.73"
+        }
+      }
+    },
     "Timezone": {
       "description": "Model for Timezone",
       "required": [ "is_dst" ],
