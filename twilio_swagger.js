@@ -1,192 +1,381 @@
-Skip to content
-Why GitHub ?
-    Team
-Enterprise
-Explore
-Marketplace
-Pricing
-Search
-Sign in
-    Sign up
-This repository has been archived by the owner.It is now read - only.
-    pennsignals
-    /
-    swagger - specifications
-Archived
-14
-Code
-Issues
-Pull requests
-Actions
-Projects
-Wiki
-Security
-Insights
-swagger - specifications / specifications / twilio / swagger.json
-
-rightlag Update Twilio Swagger specification
-Latest commit 93c767e on Dec 16, 2016
-History
-0 contributors
-148 lines(148 sloc)  5.53 KB
-
 {
     "swagger": "2.0",
         "info": {
-        "title": "Twilio API",
-            "description": "Twilio REST API",
-                "version": "1.0.0"
+        "title": "Twilio",
+            "description": "API for api.twilio.com",
+                "version": "0.0.0"
     },
     "host": "api.twilio.com",
-        "schemes": [
-            "https"
-        ],
-            "basePath": "/2010-04-01",
-                "produces": [
-                    "application/json"
-                ],
-                    "consumes": [
-                        "application/x-www-form-urlencoded"
-                    ],
-                        "securityDefinitions": {
-        "basicAuth": {
-            "type": "basic"
-        }
-    },
-    "paths": {
-        "/Accounts/{AccountSid}/Messages.json": {
+        "schemes": ["https"],
+            "paths": {
+        "/2010-04-01/Accounts/{TwilioAccountSID}/Messages.json": {
             "post": {
-                "summary": "Send a new outgoing message",
-                    "parameters": [
-                        {
-                            "name": "AccountSid",
-                            "in": "path",
-                            "description": "The application SID",
-                            "required": true,
-                            "type": "string"
-                        },
-                        {
-                            "name": "To",
-                            "in": "formData",
-                            "description": "The destination phone number",
-                            "required": true,
-                            "type": "string"
-                        },
-                        {
-                            "name": "From",
-                            "in": "formData",
-                            "description": "A Twilio phone number (in E.164 format) or alphanumeric sender ID enabled for the type of message you wish to send",
-                            "required": true,
-                            "type": "string"
-                        },
-                        {
-                            "name": "MessagingServiceSid",
-                            "in": "formData",
-                            "description": "The 34 character unique id of the Messaging Service you want to associate with this Message",
-                            "required": false,
-                            "type": "string"
-                        },
-                        {
-                            "name": "Body",
-                            "in": "formData",
-                            "description": "The text of the message you want to send, limited to 1600 characters",
-                            "required": true,
-                            "type": "string"
-                        },
-                        {
-                            "name": "MediaUrl",
-                            "in": "formData",
-                            "description": "The URL of the media you wish to send out with the message. gif , png and jpeg content is currently supported and will be formatted correctly on the recipient's device",
-                            "required": false,
-                            "type": "string"
-                        },
-                        {
-                            "name": "StatusCallback",
-                            "in": "formData",
-                            "description": "A URL that Twilio will POST to each time your message status changes to one of the following: queued, failed, sent, delivered, or undelivered",
-                            "required": false,
-                            "type": "string"
-                        },
-                        {
-                            "name": "ApplicationSid",
-                            "in": "formData",
-                            "description": "Twilio will POST MessageSid as well as MessageStatus=sent or MessageStatus=failed to the URL in the MessageStatusCallback property of this Application",
-                            "required": false,
-                            "type": "string"
-                        },
-                        {
-                            "name": "MaxPrice",
-                            "in": "formData",
-                            "description": "The total maximum price up to the fourth decimal (0.0001) in US dollars acceptable for the message to be delivered",
-                            "required": false,
-                            "type": "number",
-                            "format": "double"
-                        },
-                        {
-                            "name": "ProvideFeedback",
-                            "in": "formData",
-                            "description": "Set this value to true if you are sending messages that have a trackable user action and you intend to confirm delivery of the message using the Message Feedback API",
-                            "required": false,
-                            "type": "boolean",
-                            "default": false
-                        }
-                    ],
-                        "tags": [
-                            "Messaging"
-                        ],
-                            "security": [
-                                {
-                                    "basicAuth": []
-                                }
-                            ],
-                                "responses": {
+                "tags": ["2010_04_01"],
+                    "summary": "Send SMS",
+                        "description": "Send SMS",
+                            "operationId": "SendSMS",
+                                "consumes": ["application/x-www-form-urlencoded"],
+                                    "produces": ["application/json"],
+                                        "parameters": [{
+                                            "name": "From",
+                                            "in": "formData",
+                                            "description": "From",
+                                            "required": true,
+                                            "type": "string",
+                                            "x-example": ""
+                                        }, {
+                                            "name": "To",
+                                            "in": "formData",
+                                            "description": "To",
+                                            "required": true,
+                                            "type": "string",
+                                            "x-example": ""
+                                        }, {
+                                            "name": "Body",
+                                            "in": "formData",
+                                            "description": "Body",
+                                            "required": true,
+                                            "type": "string",
+                                            "x-example": ""
+                                        }],
+                                            "responses": {
                     "200": {
-                        "description": "Successful operation"
-                    },
-                    "default": {
-                        "description": "Unexpected error",
+                        "description": "OK",
                             "schema": {
-                            "$ref": "#/definitions/Error"
+                            "$ref": "#/definitions/Response"
+                        },
+                        "examples": {
+                            "application/json": {
+                                "account_sid": "ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+                                    "api_version": "2010-04-01",
+                                        "body": "This is the ship that made the Kessel Run in fourteen parsecs?",
+                                            "date_created": "Thu, 30 Jul 2015 20:12:31 +0000",
+                                                "date_sent": "Thu, 30 Jul 2015 20:12:33 +0000",
+                                                    "date_updated": "Thu, 30 Jul 2015 20:12:33 +0000",
+                                                        "direction": "outbound-api",
+                                                            "error_code": null,
+                                                                "error_message": null,
+                                                                    "from": "+15017122661",
+                                                                        "messaging_service_sid": "MGXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+                                                                            "num_media": "0",
+                                                                                "num_segments": "1",
+                                                                                    "price": null,
+                                                                                        "price_unit": null,
+                                                                                            "sid": "SMXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+                                                                                                "status": "sent",
+                                                                                                    "subresource_uris": {
+                                    "media": "/2010-04-01/Accounts/ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/Messages/SMXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/Media.json"
+                                },
+                                "to": "+15558675310",
+                                    "uri": "/2010-04-01/Accounts/ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/Messages/SMXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX.json"
+                            }
                         }
                     }
-                }
+                },
+                "security": [{
+                    "Default": []
+                }]
             }
         }
     },
     "definitions": {
-        "Error": {
-            "type": "object",
-                "properties": {
+        "Response": {
+            "description": "Model for Response",
+                "required": ["account_sid"],
+                    "properties": {
+                "account_sid": {
+                    "type": "string",
+                        "x-example": "ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+                },
+                "api_version": {
+                    "type": "string",
+                        "format": "date",
+                            "x-example": "2010-04-01"
+                },
+                "body": {
+                    "type": "string",
+                        "x-example": "This is the ship that made the Kessel Run in fourteen parsecs?"
+                },
+                "date_created": {
+                    "type": "string",
+                        "x-example": "Thu, 30 Jul 2015 20:12:31 +0000"
+                },
+                "date_sent": {
+                    "type": "string",
+                        "x-example": "Thu, 30 Jul 2015 20:12:33 +0000"
+                },
+                "date_updated": {
+                    "type": "string",
+                        "x-example": "Thu, 30 Jul 2015 20:12:33 +0000"
+                },
+                "direction": {
+                    "type": "string",
+                        "x-example": "outbound-api"
+                },
+                "error_code": {
+                    "type": "string",
+                        "x-example": ""
+                },
+                "error_message": {
+                    "type": "string",
+                        "x-example": ""
+                },
+                "from": {
+                    "type": "string",
+                        "x-example": "+15017122661"
+                },
+                "messaging_service_sid": {
+                    "type": "string",
+                        "x-example": "MGXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+                },
+                "num_media": {
+                    "type": "string",
+                        "x-example": "0"
+                },
+                "num_segments": {
+                    "type": "string",
+                        "x-example": "1"
+                },
+                "price": {
+                    "type": "string",
+                        "x-example": ""
+                },
+                "price_unit": {
+                    "type": "string",
+                        "x-example": ""
+                },
+                "sid": {
+                    "type": "string",
+                        "x-example": "SMXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+                },
                 "status": {
-                    "type": "integer",
-                        "format": "int32"
+                    "type": "string",
+                        "x-example": "sent"
                 },
-                "message": {
-                    "type": "string"
+                "subresource_uris": {
+                    "$ref": "#/definitions/SubresourceUris",
+                        "x-example": "{\r\n  \"media\": \"/2010-04-01/Accounts/ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/Messages/SMXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/Media.json\"\r\n}"
                 },
-                "detail": {
-                    "type": "string"
+                "to": {
+                    "type": "string",
+                        "x-example": "+15558675310"
                 },
-                "more_info": {
-                    "type": "string"
-                },
-                "code": {
-                    "type": "integer",
-                        "format": "int32"
+                "uri": {
+                    "type": "string",
+                        "x-example": "/2010-04-01/Accounts/ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/Messages/SMXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX.json"
+                }
+            }
+        },
+        "SubresourceUris": {
+            "description": "Model for SubresourceUris",
+                "required": ["media"],
+                    "properties": {
+                "media": {
+                    "type": "string",
+                        "x-example": "/2010-04-01/Accounts/ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/Messages/SMXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/Media.json"
                 }
             }
         }
-    }
+    },
+    "securityDefinitions": {
+        "Default": {
+            "description": "Default authentication scheme for the API",
+                "type": "basic"
+        }
+    },
+    "security": [],
+        "tags": [{
+            "name": "2010_04_01",
+            "description": "Operations about 2010_04_01"
+        }]
+} {
+    "swagger": "2.0",
+        "info": {
+        "title": "Twilio",
+            "description": "API for api.twilio.com",
+                "version": "0.0.0"
+    },
+    "host": "api.twilio.com",
+        "schemes": ["https"],
+            "paths": {
+        "/2010-04-01/Accounts/{TwilioAccountSID}/Messages.json": {
+            "post": {
+                "tags": ["2010_04_01"],
+                    "summary": "Send SMS",
+                        "description": "Send SMS",
+                            "operationId": "SendSMS",
+                                "consumes": ["application/x-www-form-urlencoded"],
+                                    "produces": ["application/json"],
+                                        "parameters": [{
+                                            "name": "From",
+                                            "in": "formData",
+                                            "description": "From",
+                                            "required": true,
+                                            "type": "string",
+                                            "x-example": ""
+                                        }, {
+                                            "name": "To",
+                                            "in": "formData",
+                                            "description": "To",
+                                            "required": true,
+                                            "type": "string",
+                                            "x-example": ""
+                                        }, {
+                                            "name": "Body",
+                                            "in": "formData",
+                                            "description": "Body",
+                                            "required": true,
+                                            "type": "string",
+                                            "x-example": ""
+                                        }],
+                                            "responses": {
+                    "200": {
+                        "description": "OK",
+                            "schema": {
+                            "$ref": "#/definitions/Response"
+                        },
+                        "examples": {
+                            "application/json": {
+                                "account_sid": "ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+                                    "api_version": "2010-04-01",
+                                        "body": "This is the ship that made the Kessel Run in fourteen parsecs?",
+                                            "date_created": "Thu, 30 Jul 2015 20:12:31 +0000",
+                                                "date_sent": "Thu, 30 Jul 2015 20:12:33 +0000",
+                                                    "date_updated": "Thu, 30 Jul 2015 20:12:33 +0000",
+                                                        "direction": "outbound-api",
+                                                            "error_code": null,
+                                                                "error_message": null,
+                                                                    "from": "+15017122661",
+                                                                        "messaging_service_sid": "MGXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+                                                                            "num_media": "0",
+                                                                                "num_segments": "1",
+                                                                                    "price": null,
+                                                                                        "price_unit": null,
+                                                                                            "sid": "SMXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+                                                                                                "status": "sent",
+                                                                                                    "subresource_uris": {
+                                    "media": "/2010-04-01/Accounts/ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/Messages/SMXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/Media.json"
+                                },
+                                "to": "+15558675310",
+                                    "uri": "/2010-04-01/Accounts/ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/Messages/SMXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX.json"
+                            }
+                        }
+                    }
+                },
+                "security": [{
+                    "Default": []
+                }]
+            }
+        }
+    },
+    "definitions": {
+        "Response": {
+            "description": "Model for Response",
+                "required": ["account_sid"],
+                    "properties": {
+                "account_sid": {
+                    "type": "string",
+                        "x-example": "ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+                },
+                "api_version": {
+                    "type": "string",
+                        "format": "date",
+                            "x-example": "2010-04-01"
+                },
+                "body": {
+                    "type": "string",
+                        "x-example": "This is the ship that made the Kessel Run in fourteen parsecs?"
+                },
+                "date_created": {
+                    "type": "string",
+                        "x-example": "Thu, 30 Jul 2015 20:12:31 +0000"
+                },
+                "date_sent": {
+                    "type": "string",
+                        "x-example": "Thu, 30 Jul 2015 20:12:33 +0000"
+                },
+                "date_updated": {
+                    "type": "string",
+                        "x-example": "Thu, 30 Jul 2015 20:12:33 +0000"
+                },
+                "direction": {
+                    "type": "string",
+                        "x-example": "outbound-api"
+                },
+                "error_code": {
+                    "type": "string",
+                        "x-example": ""
+                },
+                "error_message": {
+                    "type": "string",
+                        "x-example": ""
+                },
+                "from": {
+                    "type": "string",
+                        "x-example": "+15017122661"
+                },
+                "messaging_service_sid": {
+                    "type": "string",
+                        "x-example": "MGXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+                },
+                "num_media": {
+                    "type": "string",
+                        "x-example": "0"
+                },
+                "num_segments": {
+                    "type": "string",
+                        "x-example": "1"
+                },
+                "price": {
+                    "type": "string",
+                        "x-example": ""
+                },
+                "price_unit": {
+                    "type": "string",
+                        "x-example": ""
+                },
+                "sid": {
+                    "type": "string",
+                        "x-example": "SMXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+                },
+                "status": {
+                    "type": "string",
+                        "x-example": "sent"
+                },
+                "subresource_uris": {
+                    "$ref": "#/definitions/SubresourceUris",
+                        "x-example": "{\r\n  \"media\": \"/2010-04-01/Accounts/ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/Messages/SMXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/Media.json\"\r\n}"
+                },
+                "to": {
+                    "type": "string",
+                        "x-example": "+15558675310"
+                },
+                "uri": {
+                    "type": "string",
+                        "x-example": "/2010-04-01/Accounts/ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/Messages/SMXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX.json"
+                }
+            }
+        },
+        "SubresourceUris": {
+            "description": "Model for SubresourceUris",
+                "required": ["media"],
+                    "properties": {
+                "media": {
+                    "type": "string",
+                        "x-example": "/2010-04-01/Accounts/ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/Messages/SMXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/Media.json"
+                }
+            }
+        }
+    },
+    "securityDefinitions": {
+        "Default": {
+            "description": "Default authentication scheme for the API",
+                "type": "basic"
+        }
+    },
+    "security": [],
+        "tags": [{
+            "name": "2010_04_01",
+            "description": "Operations about 2010_04_01"
+        }]
 }
-© 2021 GitHub, Inc.
-    Terms
-Privacy
-Security
-Status
-Docs
-Contact GitHub
-Pricing
-API
-Training
-Blog
-About
