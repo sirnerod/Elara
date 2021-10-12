@@ -1,7 +1,7 @@
 body {
-    background-color: #000000;
+    background-color: #000000!important;
 }
 
 .SFC SourceCode-Forms-Controls-Web-Label .input-label {
-    font-size: 12pt;
+    font-size: 12pt!important;
 }
