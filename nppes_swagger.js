@@ -11,7 +11,7 @@
         "/api/": {
             "get": {
                 "tags": ["Web"],
-                    "description": "Get",
+                    "description": "get_result",
                         "operationId": "get_result",
                             "produces": ["application/json"],
                                 "parameters": [
