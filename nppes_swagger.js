@@ -35,7 +35,7 @@
                                     "responses": {
                     "200": {
                         "description": "OK",
-                            "schema": { "$ref": "#/definitions/Taxonomies" },
+                            "schema": { "$ref": "#/definitions/NppesResults" },
                         "examples": {
                             "application/json": {
                                 "result_count": 1,
