@@ -290,9 +290,17 @@
                         "format": "date",
                             "x-example": "2020-09-28"
                 },
+                "middle_name": {
+                    "type": "string",
+                        "x-example": "RAE"
+                },
                 "name": {
                     "type": "string",
                         "x-example": "SANTOS ESTEBAN"
+                },
+                "name_prefix": {
+                    "type": "string",
+                        "x-example": "DR."
                 },
                 "sole_proprietor": {
                     "type": "string",
