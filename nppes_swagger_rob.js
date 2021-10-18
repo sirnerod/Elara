@@ -54,6 +54,94 @@
                                         "required": false,
                                         "type": "string",
                                         "x-example": ""
+                                    },
+                                    {
+                                        "name": "enumeration_type",
+                                        "in": "query",
+                                        "description": "enumeration_type",
+                                        "required": false,
+                                        "type": "string",
+                                        "x-example": ""
+                                    },
+                                    {
+                                        "name": "taxonomy_description",
+                                        "in": "query",
+                                        "description": "taxonomy_description",
+                                        "required": false,
+                                        "type": "string",
+                                        "x-example": ""
+                                    },
+                                    {
+                                        "name": "use_first_name_alias",
+                                        "in": "query",
+                                        "description": "use_first_name_alias",
+                                        "required": false,
+                                        "type": "string",
+                                        "x-example": ""
+                                    },
+                                    {
+                                        "name": "address_purpose",
+                                        "in": "query",
+                                        "description": "address_purpose",
+                                        "required": false,
+                                        "type": "string",
+                                        "x-example": ""
+                                    },
+                                    {
+                                        "name": "city",
+                                        "in": "query",
+                                        "description": "city",
+                                        "required": false,
+                                        "type": "string",
+                                        "x-example": ""
+                                    },
+                                    {
+                                        "name": "state",
+                                        "in": "query",
+                                        "description": "state",
+                                        "required": false,
+                                        "type": "string",
+                                        "x-example": ""
+                                    },
+                                    {
+                                        "name": "postal_code",
+                                        "in": "query",
+                                        "description": "postal_code",
+                                        "required": false,
+                                        "type": "string",
+                                        "x-example": ""
+                                    },
+                                    {
+                                        "name": "country_code",
+                                        "in": "query",
+                                        "description": "country_code",
+                                        "required": false,
+                                        "type": "string",
+                                        "x-example": ""
+                                    },
+                                    {
+                                        "name": "limit",
+                                        "in": "query",
+                                        "description": "limit",
+                                        "required": false,
+                                        "type": "string",
+                                        "x-example": ""
+                                    },
+                                    {
+                                        "name": "skip",
+                                        "in": "query",
+                                        "description": "skip",
+                                        "required": false,
+                                        "type": "string",
+                                        "x-example": ""
+                                    },
+                                    {
+                                        "name": "pretty",
+                                        "in": "query",
+                                        "description": "pretty",
+                                        "required": false,
+                                        "type": "boolean",
+                                        "x-example": ""
                                     }
                                 ],
                                     "responses": {
@@ -150,7 +238,7 @@
                 "results": {
                     "type": "array",
                         "items": { "$ref": "#/definitions/Results" },
-                    "x-example": "[\n  {\n    \"addresses\": [\n      {\n        \"address_1\": \"1182 CYPRESS GLEN CIR\",\n        \"address_2\": \"\",\n        \"address_purpose\": \"LOCATION\",\n        \"address_type\": \"DOM\",\n        \"city\": \"KISSIMMEE\",\n        \"country_code\": \"US\",\n        \"country_name\": \"United States\",\n        \"fax_number\": \"407-350-5928\",\n        \"postal_code\": \"347417560\",\n        \"state\": \"FL\",\n        \"telephone_number\": \"407-350-5917\"\n      },\n      {\n        \"address_1\": \"1853 RAIN LILY PL\",\n        \"address_2\": \"\",\n        \"address_purpose\": \"MAILING\",\n        \"address_type\": \"DOM\",\n        \"city\": \"SAINT CLOUD\",\n        \"country_code\": \"US\",\n        \"country_name\": \"United States\",\n        \"postal_code\": \"347718557\",\n        \"state\": \"FL\",\n        \"telephone_number\": \"407-256-8373\"\n      }\n    ],\n    \"basic\": {\n      \"certification_date\": \"2020-09-28\",\n      \"credential\": \"ARNP\",\n      \"enumeration_date\": \"2020-09-28\",\n      \"first_name\": \"ESTEBAN\",\n      \"gender\": \"M\",\n      \"last_name\": \"SANTOS\",\n      \"last_updated\": \"2020-09-28\",\n      \"name\": \"SANTOS ESTEBAN\",\n      \"sole_proprietor\": \"NO\",\n      \"status\": \"A\"\n    },\n    \"created_epoch\": 1601251200,\n    \"enumeration_type\": \"NPI-1\",\n    \"identifiers\": [\n\n    ],\n    \"last_updated_epoch\": 1601326935,\n    \"number\": 1043827538,\n    \"other_names\": [\n      {\n        \"code\": \"1\",\n        \"credential\": \"ARNP\",\n        \"first_name\": \"ESTEBAN\",\n        \"last_name\": \"SANTOS\",\n        \"type\": \"Former Name\"\n      }\n    ],\n    \"taxonomies\": [\n      {\n        \"code\": \"363LF0000X\",\n        \"desc\": \"Nurse Practitioner Family\",\n        \"license\": \"11009008\",\n        \"primary\": true,\n        \"state\": \"FL\"\n      }\n    ]\n  }\n]"
+                    "x-example": "[\r\n  {\r\n    \"addresses\": [\r\n      {\r\n        \"address_1\": \"1182 CYPRESS GLEN CIR\",\r\n        \"address_2\": \"\",\r\n        \"address_purpose\": \"LOCATION\",\r\n        \"address_type\": \"DOM\",\r\n        \"city\": \"KISSIMMEE\",\r\n        \"country_code\": \"US\",\r\n        \"country_name\": \"United States\",\r\n        \"fax_number\": \"407-350-5928\",\r\n        \"postal_code\": \"347417560\",\r\n        \"state\": \"FL\",\r\n        \"telephone_number\": \"407-350-5917\"\r\n      },\r\n      {\r\n        \"address_1\": \"1853 RAIN LILY PL\",\r\n        \"address_2\": \"\",\r\n        \"address_purpose\": \"MAILING\",\r\n        \"address_type\": \"DOM\",\r\n        \"city\": \"SAINT CLOUD\",\r\n        \"country_code\": \"US\",\r\n        \"country_name\": \"United States\",\r\n        \"postal_code\": \"347718557\",\r\n        \"state\": \"FL\",\r\n        \"telephone_number\": \"407-256-8373\"\r\n      }\r\n    ],\r\n    \"basic\": {\r\n      \"certification_date\": \"2020-09-28\",\r\n      \"credential\": \"ARNP\",\r\n      \"enumeration_date\": \"2020-09-28\",\r\n      \"first_name\": \"ESTEBAN\",\r\n      \"gender\": \"M\",\r\n      \"last_name\": \"SANTOS\",\r\n      \"last_updated\": \"2020-09-28\",\r\n      \"name\": \"SANTOS ESTEBAN\",\r\n      \"sole_proprietor\": \"NO\",\r\n      \"status\": \"A\"\r\n    },\r\n    \"created_epoch\": 1601251200,\r\n    \"enumeration_type\": \"NPI-1\",\r\n    \"identifiers\": [\r\n\r\n    ],\r\n    \"last_updated_epoch\": 1601326935,\r\n    \"number\": 1043827538,\r\n    \"other_names\": [\r\n      {\r\n        \"code\": \"1\",\r\n        \"credential\": \"ARNP\",\r\n        \"first_name\": \"ESTEBAN\",\r\n        \"last_name\": \"SANTOS\",\r\n        \"type\": \"Former Name\"\r\n      }\r\n    ],\r\n    \"taxonomies\": [\r\n      {\r\n        \"code\": \"363LF0000X\",\r\n        \"desc\": \"Nurse Practitioner Family\",\r\n        \"license\": \"11009008\",\r\n        \"primary\": true,\r\n        \"state\": \"FL\"\r\n      }\r\n    ]\r\n  }\r\n]"
                 }
             }
         },
