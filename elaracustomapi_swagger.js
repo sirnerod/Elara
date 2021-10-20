@@ -67,6 +67,7 @@
                                     "Address1": "1720 FENNELL ST",
                                     "City": "MAITLAND",
                                     "State": "FL",
+                                    "PostalCode": "32751",
                                     "Telephone": "321-972-8917",
                                     "TaxonomyCode": "111N00000X",
                                     "TaxonomyLicense": "CH9501",
@@ -83,12 +84,13 @@
                                     "Address1": "35000 GUADALCANAL ST",
                                     "City": "SAN DIEGO",
                                     "State": "CA",
+                                    "PostalCode": "92140",
                                     "Telephone": "619-524-1963",
-                                    "TaxonomyCode": "390200000X",
-                                    "TaxonomyLicense": "",
-                                    "TaxonomyDescription": "Student in an Organized Health Care Education/Training Program",
-                                    "TaxonomyPrimary": false,
-                                    "TaxonomyState": ""
+                                    "TaxonomyCode": "171000000X",
+                                    "TaxonomyLicense": "1151164",
+                                    "TaxonomyDescription": "Military Health Care Provider",
+                                    "TaxonomyPrimary": true,
+                                    "TaxonomyState": "CA"
                                 }
                             ]
                         }
@@ -197,6 +199,10 @@
                     "type": "integer",
                         "format": "int32",
                             "x-example": "1255687570"
+                },
+                "PostalCode": {
+                    "type": "string",
+                        "x-example": "32751"
                 },
                 "State": {
                     "type": "string",
