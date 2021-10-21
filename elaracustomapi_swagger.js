@@ -69,6 +69,7 @@
                                     "State": "FL",
                                     "PostalCode": "32751",
                                     "Telephone": "321-972-8917",
+                                    "FaxNumber": "321-800-3383",
                                     "TaxonomyCode": "111N00000X",
                                     "TaxonomyLicense": "CH9501",
                                     "TaxonomyDescription": "Chiropractor",
@@ -86,6 +87,7 @@
                                     "State": "CA",
                                     "PostalCode": "92140",
                                     "Telephone": "619-524-1963",
+                                    "FaxNumber": "619-532-9510",
                                     "TaxonomyCode": "171000000X",
                                     "TaxonomyLicense": "1151164",
                                     "TaxonomyDescription": "Military Health Care Provider",
@@ -178,6 +180,10 @@
                 "City": {
                     "type": "string",
                         "x-example": "WOODHAVEN"
+                },
+                "FaxNumber": {
+                    "type": "string",
+                        "x-example": "321-800-3383"
                 },
                 "FirstName": {
                     "type": "string",
