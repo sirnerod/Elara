@@ -225,6 +225,25 @@
                 },
                 "security": []
             }
+        },
+        "/smartsheet/RegionList": {
+            "post": {
+                "tags": ["Smartsheet"],
+                    "description": "Region list",
+                        "operationId": "RegionList",
+                            "produces": ["application/json"],
+                                "responses": {
+                    "200": {
+                        "description": "OK",
+                            "schema": {
+                            "type": "array",
+                                "items": { "type": "string" }
+                        },
+                        "examples": { "application/json": ["Elara Caring", "Midwest", "South", "Northeast"] }
+                    }
+                },
+                "security": []
+            }
         }
     },
     "definitions": {
