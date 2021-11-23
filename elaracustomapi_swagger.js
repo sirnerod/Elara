@@ -133,6 +133,57 @@
                 "security": []
             }
         },
+        "/smartsheet/HCHBPayorList": {
+            "post": {
+                "tags": ["Smartsheet"],
+                    "description": "Hchb payor list",
+                        "operationId": "HCHBPayorList",
+                            "consumes": ["application/x-www-form-urlencoded"],
+                                "produces": ["application/json"],
+                                    "parameters": [
+                                        {
+                                            "name": "region",
+                                            "in": "formData",
+                                            "description": "region",
+                                            "required": true,
+                                            "type": "string",
+                                            "x-example": ""
+                                        },
+                                        {
+                                            "name": "payor",
+                                            "in": "formData",
+                                            "description": "payor",
+                                            "required": true,
+                                            "type": "string",
+                                            "x-example": ""
+                                        }
+                                    ],
+                                        "responses": {
+                    "200": {
+                        "description": "OK",
+                            "schema": {
+                            "type": "array",
+                                "items": { "$ref": "#/definitions/HchbPayorList" }
+                        },
+                        "examples": {
+                            "application/json": [
+                                {
+                                    "region": "Elara Caring",
+                                    "payor": "Aetna",
+                                    "hchb": "AETNA COMMERCIAL"
+                                },
+                                {
+                                    "region": "Elara Caring",
+                                    "payor": "Aetna",
+                                    "hchb": "AETNA MEDICARE ADVANTAGE FFS"
+                                }
+                            ]
+                        }
+                    }
+                },
+                "security": []
+            }
+        },
         "/smartsheet/payorlist": {
             "get": {
                 "tags": ["Smartsheet"],
@@ -244,9 +295,64 @@
                 },
                 "security": []
             }
+        },
+        "/smartsheet/RegionPayorList": {
+            "post": {
+                "tags": ["Smartsheet"],
+                    "description": "Region payor list",
+                        "operationId": "RegionPayorList",
+                            "consumes": ["application/x-www-form-urlencoded"],
+                                "produces": ["application/json"],
+                                    "parameters": [
+                                        {
+                                            "name": "region",
+                                            "in": "formData",
+                                            "description": "region",
+                                            "required": true,
+                                            "type": "string",
+                                            "x-example": ""
+                                        }
+                                    ],
+                                        "responses": {
+                    "200": {
+                        "description": "OK",
+                            "schema": {
+                            "type": "array",
+                                "items": { "$ref": "#/definitions/HchbPayorList" }
+                        },
+                        "examples": {
+                            "application/json": [
+                                {
+                                    "region": "Elara Caring",
+                                    "payor": "Aetna"
+                                }
+                            ]
+                        }
+                    }
+                },
+                "security": []
+            }
         }
     },
     "definitions": {
+        "HchbPayorList": {
+            "description": "Model for HchbPayorList",
+                "required": ["hchb"],
+                    "properties": {
+                "hchb": {
+                    "type": "string",
+                        "x-example": "AETNA COMMERCIAL"
+                },
+                "payor": {
+                    "type": "string",
+                        "x-example": "Aetna"
+                },
+                "region": {
+                    "type": "string",
+                        "x-example": "Elara Caring"
+                }
+            }
+        },
         "PayorMatrix": {
             "description": "Model for PayorMatrix",
                 "required": ["Appeal_Timeframe"],
