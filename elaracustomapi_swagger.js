@@ -318,7 +318,7 @@
                         "description": "OK",
                             "schema": {
                             "type": "array",
-                                "items": { "$ref": "#/definitions/HchbPayorList" }
+                                "items": { "$ref": "#/definitions/RegionPayorList" }
                         },
                         "examples": {
                             "application/json": [
@@ -335,6 +335,20 @@
         }
     },
     "definitions": {
+        "RegionPayorList": {
+            "description": "Model for RegionPayorList",
+                "required": ["payor"],
+                    "properties": {
+                "payor": {
+                    "type": "string",
+                        "x-example": "Aetna"
+                },
+                "region": {
+                    "type": "string",
+                        "x-example": "Elara Caring"
+                }
+            }
+        },
         "HchbPayorList": {
             "description": "Model for HchbPayorList",
                 "required": ["hchb"],
