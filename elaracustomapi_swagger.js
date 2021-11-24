@@ -335,38 +335,6 @@
         }
     },
     "definitions": {
-        "RegionPayorList": {
-            "description": "Model for RegionPayorList",
-                "required": ["payor"],
-                    "properties": {
-                "payor": {
-                    "type": "string",
-                        "x-example": "Aetna"
-                },
-                "region": {
-                    "type": "string",
-                        "x-example": "Elara Caring"
-                }
-            }
-        },
-        "HchbPayorList": {
-            "description": "Model for HchbPayorList",
-                "required": ["hchb"],
-                    "properties": {
-                "hchb": {
-                    "type": "string",
-                        "x-example": "AETNA COMMERCIAL"
-                },
-                "payor": {
-                    "type": "string",
-                        "x-example": "Aetna"
-                },
-                "region": {
-                    "type": "string",
-                        "x-example": "Elara Caring"
-                }
-            }
-        },
         "PayorMatrix": {
             "description": "Model for PayorMatrix",
                 "required": ["Appeal_Timeframe"],
@@ -416,6 +384,10 @@
                     "type": "string",
                         "x-example": "Commercial"
                 },
+                "Plan_Products__PPO__HMO__MA__Workers_Comp_": {
+                    "type": "string",
+                        "x-example": "Commercial: HMO, PPO, EPO, POS, QPOS, Elect Choice, Open  Choice,  Managed  Choice  POS,  Aetna  Choice  POS  II,  Aetna  Select,  Aetna  Student  Health,  indemnity  plans  with network   incentives,   Aetna   Signature   Administrators®,   Joint   Claims   Administration, Meritain/Meritain   Shared Administrative Services, Passport to Healthcare®and National Advantage Program, Worker's Comp, Auto, Medical Rental Product (First Health), Cofinity"
+                },
                 "Primary": {
                     "type": "string",
                         "x-example": "BCBS of OK_Aspire_10.1.2010"
@@ -424,9 +396,57 @@
                     "type": "string",
                         "x-example": "South"
                 },
+                "Reimbursement_Method_____Bill_Type": {
+                    "type": "string",
+                        "x-example": "Fee for Service (FFS)"
+                },
+                "Related_Payors": {
+                    "type": "string",
+                        "x-example": ""
+                },
+                "Rev_Code_HCPC": {
+                    "type": "string",
+                        "x-example": "CMS"
+                },
                 "State": {
                     "type": "string",
                         "x-example": "OK"
+                },
+                "Timely_Filing_____only": {
+                    "type": "string",
+                        "x-example": "180"
+                }
+            }
+        },
+        "RegionPayorList": {
+            "description": "Model for RegionPayorList",
+                "required": ["payor"],
+                    "properties": {
+                "payor": {
+                    "type": "string",
+                        "x-example": "Aetna"
+                },
+                "region": {
+                    "type": "string",
+                        "x-example": "Elara Caring"
+                }
+            }
+        },
+        "HchbPayorList": {
+            "description": "Model for HchbPayorList",
+                "required": ["hchb"],
+                    "properties": {
+                "hchb": {
+                    "type": "string",
+                        "x-example": "AETNA COMMERCIAL"
+                },
+                "payor": {
+                    "type": "string",
+                        "x-example": "Aetna"
+                },
+                "region": {
+                    "type": "string",
+                        "x-example": "Elara Caring"
                 }
             }
         },
