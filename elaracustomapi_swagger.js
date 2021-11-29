@@ -343,14 +343,21 @@
                     "type": "string",
                         "x-example": "180"
                 },
+                "Authorization_Details": {
+                    "type": "string",
+                        "x-example": "Not In Contract"
+                },
+                "Authorization_Required": {
+                    "type": "string",
+                        "x-example": "Not In Contract"
+                },
                 "Branches": {
                     "type": "string",
                         "x-example": "A01, A02, A03, A04, A05, A06, A07, A08, A09, A10, A11, A12, A13,  A14"
                 },
                 "Contract_Effective_Date": {
                     "type": "string",
-                        "format": "date",
-                            "x-example": "2020-10-15"
+                        "x-example": "2020-10-15"
                 },
                 "Entity": {
                     "type": "string",
@@ -384,9 +391,9 @@
                     "type": "string",
                         "x-example": "Commercial"
                 },
-                "Plan_Products__PPO__HMO__MA__Workers_Comp_": {
+                "Plan_Products__PPO__HMO__MA__W": {
                     "type": "string",
-                        "x-example": "Commercial: HMO, PPO, EPO, POS, QPOS, Elect Choice, Open  Choice,  Managed  Choice  POS,  Aetna  Choice  POS  II,  Aetna  Select,  Aetna  Student  Health,  indemnity  plans  with network   incentives,   Aetna   Signature   Administrators®,   Joint   Claims   Administration, Meritain/Meritain   Shared Administrative Services, Passport to Healthcare®and National Advantage Program, Worker's Comp, Auto, Medical Rental Product (First Health), Cofinity"
+                        "x-example": "HMO, POS, Blue Care, Blue CardPOS, PPO, EPO, CDHP"
                 },
                 "Primary": {
                     "type": "string",
@@ -396,13 +403,17 @@
                     "type": "string",
                         "x-example": "South"
                 },
-                "Reimbursement_Method_____Bill_Type": {
+                "Reimbursement_Method_____Bill_": {
                     "type": "string",
                         "x-example": "Fee for Service (FFS)"
                 },
                 "Related_Payors": {
                     "type": "string",
                         "x-example": ""
+                },
+                "Retro_Authorization__yes_or_no": {
+                    "type": "string",
+                        "x-example": "Not In Contract"
                 },
                 "Rev_Code_HCPC": {
                     "type": "string",
