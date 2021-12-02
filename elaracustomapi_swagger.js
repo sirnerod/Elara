@@ -239,6 +239,14 @@
                                             "required": false,
                                             "type": "string",
                                             "x-example": ""
+                                        },
+                                        {
+                                            "name": "Branches",
+                                            "in": "formData",
+                                            "description": "Branches",
+                                            "required": false,
+                                            "type": "string",
+                                            "x-example": ""
                                         }
                                     ],
                                         "responses": {
@@ -253,22 +261,23 @@
                                 {
                                     "Primary": "Aetna_Elara Caring National_10.15.20",
                                     "Payor": "Aetna",
-                                    "HCHB_Payor_Type": "Commercial Insurance",
-                                    "HCHB_Payor": "AETNA COMMERCIAL",
-                                    "Payor_Class": "Commercial",
-                                    "Reimbursement_Method_--\u003E_Bill_Type": "Fee for Service (FFS)",
-                                    "Branches": "A01, A02, A03, A04, A05, A06, A07, A08, A09, A10, A11, A12, A13, A14,  ABI, ADR, BAR, BAT, BAU, BCH, BCP, BCR, BEN, BHH, BHO, BIF, BIG, BME, BMN, BNH, BNT,BPO,  BRH, BRI, BR1 BRR, BSA, BSH, BTO,BWB, BWN, BWO,  B43, CHI, CHL, COP, CPE, CRO, C01, C04, C05, C07, C08, C09, C10, C11, C12, C13, C14, C15, C17, C18, C19, C21, C24, C25, C26, C27, C31, C42, C50, DK2, EDW, ELK, ENI, FOR, FRA, GRA, G62, HC5, HMD, HUG, HXL, IND, IRV, JAC,JP1,  J37, J41,KIT, KOK, LAF, LAN, LIV, L33, MEN, MET,MK1, MN1, MNR, MON,  M34, NC1, NEW, NHV, NTN, OCK, PAL, PA2, PUR, P01, P02, P03, P04, P05, P16, RUS, SAG, SAW, SBE, SB1,  SHL, SPF, STA, STJ, S10 S61, TER, TLA, TOL, T17, T36, T37, T38, WBY, WIN, WND, WOR",
-                                    "Plan_Products_(PPO,_HMO,_MA,_Workers_Comp)": "Commercial: HMO, PPO, EPO, POS, QPOS, Elect Choice, Open  Choice,  Managed  Choice  POS,  Aetna  Choice  POS  II,  Aetna  Select,  Aetna  Student  Health,  indemnity  plans  with network   incentives,   Aetna   Signature   Administrators®,   Joint   Claims   Administration, Meritain/Meritain   Shared Administrative Services, Passport to Healthcare®and National Advantage Program, Worker's Comp, Auto, Medical Rental Product (First Health), Cofinity",
-                                    "Timely_Filing_-_#_only": "180",
-                                    "OASIS": "No",
-                                    "Face_to_Face": "No",
+                                    "HCHB_Payor_Type": "Medicare Advantage - FFS",
+                                    "HCHB_Payor": "AETNA MEDICARE ADVANTAGE FFS",
+                                    "Payor_Class": "Medicare Advantage",
+                                    "Reimbursement_Method_____Bill_": "Fee for Service (FFS)",
+                                    "Branches": "A01, A02, A03, A04, A05, A06, A07, A08, A09, A10, A11, A12, A13, A14,  ABI, ADR, BAR, BAT, BAU, BCH, BCP, BCR, BEN, BHH, BHO, BIF, BIG, BME, BMN, BNH, BNT,BPO,  BRH, BRI, BR1, BRR, BSA, BSH, BTO,BWB, BWN, BWO,  B43, CHI, CHL, COP, CPE, CRO,CV2, C01, C04, C05, C07, C08, C09, C10, C11, C12, C13, C14, C15, C17, C18, C19, C21, C24, C25, C26, C27, C42, C50, DK2, EDW, ELK, ENI, FOR, FRA, GRA, G62, HC5, HMD, HUG, HXL, IND, IRV, JAC,JP1,  J37, J41,KIT, KOK, LAF, LAN, LIV, L33, MEN, MET,MK1, MN1, MNR, MON,  M34, NC1, NEW, NHV, NTN, OCK, PAL, PA2, PUR, P01, P02, P03, P04, P05, P16, RUS, SAG, SAW, SBE, SB1,  SHL, SPF, STA, STJ, S10, S61, TER, TLA, TOL, T17, T36, T37, T38, WBY, WIN, WND, WOR",
+                                    "Plan_Products__PPO__HMO__MA__W": "Medicare Advantage",
+                                    "Timely_Filing_____only": "180",
+                                    "OASIS": "Yes",
+                                    "Face_to_Face": "Yes",
                                     "National_or_State": "National",
                                     "Region": "Elara Caring",
                                     "State": "National",
                                     "Entity": "Elara Caring",
                                     "Contract_Effective_Date": "2020-10-15",
                                     "Appeal_Timeframe": "180",
-                                    "Rev_Code/HCPC": "CMS"
+                                    "Rev_Code_HCPC": "CMS",
+                                    "Related_Payors": "ID Numbers: PBP –Aetna MA (Coventry) H –Aetna MA"
                                 }
                             ]
                         }
