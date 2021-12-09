@@ -384,6 +384,11 @@
                     "type": "string",
                         "x-example": "Commercial Insurance"
                 },
+                "Id": {
+                    "type": "integer",
+                        "format": "int32",
+                            "x-example": "93"
+                },
                 "National_or_State": {
                     "type": "string",
                         "x-example": "National"
