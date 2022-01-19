@@ -145,7 +145,7 @@
                                             "name": "region",
                                             "in": "formData",
                                             "description": "region",
-                                            "required": true,
+                                            "required": false,
                                             "type": "string",
                                             "x-example": ""
                                         },
@@ -153,7 +153,7 @@
                                             "name": "payor",
                                             "in": "formData",
                                             "description": "payor",
-                                            "required": true,
+                                            "required": false,
                                             "type": "string",
                                             "x-example": ""
                                         }
