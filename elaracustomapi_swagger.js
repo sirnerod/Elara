@@ -6,15 +6,23 @@
                 "version": "0.0.0"
     },
     "host": "elara-custom-api.herokuapp.com",
-        "schemes": ["https"],
+        "schemes": [
+            "https"
+        ],
             "paths": {
         "/nppes/getnppesinformation/": {
             "post": {
-                "tags": ["Nppes"],
+                "tags": [
+                    "Nppes"
+                ],
                     "description": "Get nppes info",
                         "operationId": "getNPPESInfo",
-                            "consumes": ["application/x-www-form-urlencoded"],
-                                "produces": ["application/json"],
+                            "consumes": [
+                                "application/x-www-form-urlencoded"
+                            ],
+                                "produces": [
+                                    "application/json"
+                                ],
                                     "parameters": [
                                         {
                                             "name": "number",
@@ -54,7 +62,9 @@
                         "description": "OK",
                             "schema": {
                             "type": "array",
-                                "items": { "$ref": "#/definitions/GetNppesInfo" }
+                                "items": {
+                                "$ref": "#/definitions/GetNppesInfo"
+                            }
                         },
                         "examples": {
                             "application/json": [
@@ -98,15 +108,20 @@
                         }
                     }
                 },
-                "security": []
+                "security": [
+                ]
             }
         },
         "/locations/getzipcodeinformation/{zipcode}": {
             "get": {
-                "tags": ["Locations"],
+                "tags": [
+                    "Locations"
+                ],
                     "description": "Getzipcodeinformation",
                         "operationId": "getzipcodeinformation",
-                            "produces": ["application/json"],
+                            "produces": [
+                                "application/json"
+                            ],
                                 "parameters": [
                                     {
                                         "name": "zipcode",
@@ -120,7 +135,9 @@
                                     "responses": {
                     "200": {
                         "description": "OK",
-                            "schema": { "$ref": "#/definitions/Location" },
+                            "schema": {
+                            "$ref": "#/definitions/Location"
+                        },
                         "examples": {
                             "application/json": {
                                 "ZipCode": "90210",
@@ -130,22 +147,29 @@
                         }
                     }
                 },
-                "security": []
+                "security": [
+                ]
             }
         },
         "/smartsheet/HCHBPayorList": {
             "post": {
-                "tags": ["Smartsheet"],
+                "tags": [
+                    "Smartsheet"
+                ],
                     "description": "Hchb payor list",
                         "operationId": "HCHBPayorList",
-                            "consumes": ["application/x-www-form-urlencoded"],
-                                "produces": ["application/json"],
+                            "consumes": [
+                                "application/x-www-form-urlencoded"
+                            ],
+                                "produces": [
+                                    "application/json"
+                                ],
                                     "parameters": [
                                         {
                                             "name": "region",
                                             "in": "formData",
                                             "description": "region",
-                                            "required": false,
+                                            "required": true,
                                             "type": "string",
                                             "x-example": ""
                                         },
@@ -153,7 +177,7 @@
                                             "name": "payor",
                                             "in": "formData",
                                             "description": "payor",
-                                            "required": false,
+                                            "required": true,
                                             "type": "string",
                                             "x-example": ""
                                         }
@@ -163,7 +187,9 @@
                         "description": "OK",
                             "schema": {
                             "type": "array",
-                                "items": { "$ref": "#/definitions/HchbPayorList" }
+                                "items": {
+                                "$ref": "#/definitions/HchbPayorList"
+                            }
                         },
                         "examples": {
                             "application/json": [
@@ -181,40 +207,107 @@
                         }
                     }
                 },
-                "security": []
+                "security": [
+                ]
+            }
+        },
+        "/utilities/parseXLS": {
+            "post": {
+                "tags": [
+                    "Utilities"
+                ],
+                    "description": "Parse xls",
+                        "operationId": "parseXLS",
+                            "consumes": [
+                                "multipart/form-data"
+                            ],
+                                "produces": [
+                                    "application/json"
+                                ],
+                                    "parameters": [
+                                        {
+                                            "name": "tableName",
+                                            "in": "formData",
+                                            "description": "tableName",
+                                            "required": true,
+                                            "type": "string",
+                                            "x-example": ""
+                                        },
+                                        {
+                                            "name": "xls",
+                                            "in": "formData",
+                                            "description": "xls",
+                                            "required": true,
+                                            "type": "file",
+                                            "x-example": ""
+                                        }
+                                    ],
+                                        "responses": {
+                    "200": {
+                        "description": "OK",
+                            "schema": {
+                            "$ref": "#/definitions/ParseXls"
+                        },
+                        "examples": {
+                            "application/json": {
+                                "success": true,
+                                    "SQLString": "INSERT INTO dbo.test (PatientName,BranchCode) VALUES ( 'John Doe','A01'),( 'Jane Dawson','')"
+                            }
+                        }
+                    }
+                },
+                "security": [
+                ]
             }
         },
         "/smartsheet/payorlist": {
             "get": {
-                "tags": ["Smartsheet"],
+                "tags": [
+                    "Smartsheet"
+                ],
                     "description": "Payorlist",
                         "operationId": "payorlist",
-                            "produces": ["application/json"],
+                            "produces": [
+                                "application/json"
+                            ],
                                 "responses": {
                     "200": {
                         "description": "OK",
                             "schema": {
                             "type": "array",
-                                "items": { "$ref": "#/definitions/Payorlist" }
+                                "items": {
+                                "$ref": "#/definitions/Payorlist"
+                            }
                         },
                         "examples": {
                             "application/json": [
-                                { "name": "BCBS OF LOUISIANA" },
-                                { "name": "ILLINICARE/CELTIC OF ILLINOIS" }
+                                {
+                                    "name": "BCBS OF LOUISIANA"
+                                },
+                                {
+                                    "name": "ILLINICARE/CELTIC OF ILLINOIS"
+                                }
                             ]
                         }
                     }
                 },
-                "security": []
+                "security": [
+                ]
             }
         },
         "/smartsheet/PayorMatrix": {
             "post": {
-                "tags": ["Smartsheet"],
+                "tags": [
+                    "Smartsheet"
+                ],
                     "description": "Payor matrix",
                         "operationId": "PayorMatrix",
-                            "consumes": ["application/x-www-form-urlencoded"],
-                                "produces": ["application/json"],
+                            "consumes": [
+                                "application/x-www-form-urlencoded"
+                            ],
+                                "produces": [
+                                    "application/json"
+                                ],
                                     "parameters": [
                                         {
                                             "name": "Payor",
@@ -254,7 +347,9 @@
                         "description": "OK",
                             "schema": {
                             "type": "array",
-                                "items": { "$ref": "#/definitions/PayorMatrix" }
+                                "items": {
+                                "$ref": "#/definitions/PayorMatrix"
+                            }
                         },
                         "examples": {
                             "application/json": [
@@ -283,35 +378,56 @@
                         }
                     }
                 },
-                "security": []
+                "security": [
+                ]
             }
         },
         "/smartsheet/RegionList": {
             "post": {
-                "tags": ["Smartsheet"],
+                "tags": [
+                    "Smartsheet"
+                ],
                     "description": "Region list",
                         "operationId": "RegionList",
-                            "produces": ["application/json"],
+                            "produces": [
+                                "application/json"
+                            ],
                                 "responses": {
                     "200": {
                         "description": "OK",
                             "schema": {
                             "type": "array",
-                                "items": { "type": "string" }
+                                "items": {
+                                "type": "string"
+                            }
                         },
-                        "examples": { "application/json": ["Elara Caring", "Midwest", "South", "Northeast"] }
+                        "examples": {
+                            "application/json": [
+                                "Elara Caring",
+                                "Midwest",
+                                "South",
+                                "Northeast"
+                            ]
+                        }
                     }
                 },
-                "security": []
+                "security": [
+                ]
             }
         },
         "/smartsheet/RegionPayorList": {
             "post": {
-                "tags": ["Smartsheet"],
+                "tags": [
+                    "Smartsheet"
+                ],
                     "description": "Region payor list",
                         "operationId": "RegionPayorList",
-                            "consumes": ["application/x-www-form-urlencoded"],
-                                "produces": ["application/json"],
+                            "consumes": [
+                                "application/x-www-form-urlencoded"
+                            ],
+                                "produces": [
+                                    "application/json"
+                                ],
                                     "parameters": [
                                         {
                                             "name": "region",
@@ -327,7 +443,9 @@
                         "description": "OK",
                             "schema": {
                             "type": "array",
-                                "items": { "$ref": "#/definitions/RegionPayorList" }
+                                "items": {
+                                "$ref": "#/definitions/RegionPayorList"
+                            }
                         },
                         "examples": {
                             "application/json": [
@@ -339,14 +457,49 @@
                         }
                     }
                 },
-                "security": []
+                "security": [
+                ]
             }
         }
     },
     "definitions": {
+        "ParseXls": {
+            "description": "Model for ParseXls",
+                "required": [
+                    "SQLString"
+                ],
+                    "properties": {
+                "SQLString": {
+                    "type": "string",
+                        "x-example": "INSERT INTO dbo.test (PatientName,BranchCode) VALUES ( 'John Doe','A01'),( 'Jane Dawson','')"
+                },
+                "success": {
+                    "type": "boolean",
+                        "x-example": "true"
+                }
+            }
+        },
+        "XlsParser": {
+            "description": "Model for XlsParser",
+                "required": [
+                    "SQLString"
+                ],
+                    "properties": {
+                "SQLString": {
+                    "type": "string",
+                        "x-example": "INSERT INTO dbo.SQLTest (PatientName,BranchCode) VALUES ( 'John Doe','A01'),( 'Jane Dawson','')"
+                },
+                "success": {
+                    "type": "boolean",
+                        "x-example": "true"
+                }
+            }
+        },
         "PayorMatrix": {
             "description": "Model for PayorMatrix",
-                "required": ["Appeal_Timeframe"],
+                "required": [
+                    "Appeal_Timeframe"
+                ],
                     "properties": {
                 "Appeal_Timeframe": {
                     "type": "string",
@@ -445,7 +598,9 @@
         },
         "RegionPayorList": {
             "description": "Model for RegionPayorList",
-                "required": ["payor"],
+                "required": [
+                    "payor"
+                ],
                     "properties": {
                 "payor": {
                     "type": "string",
@@ -459,7 +614,9 @@
         },
         "HchbPayorList": {
             "description": "Model for HchbPayorList",
-                "required": ["hchb"],
+                "required": [
+                    "hchb"
+                ],
                     "properties": {
                 "hchb": {
                     "type": "string",
@@ -477,7 +634,9 @@
         },
         "Payorlist": {
             "description": "Model for Payorlist",
-                "required": ["name"],
+                "required": [
+                    "name"
+                ],
                     "properties": {
                 "name": {
                     "type": "string",
@@ -487,7 +646,9 @@
         },
         "GetNppesInfo": {
             "description": "Model for GetNppesInfo",
-                "required": ["Address1"],
+                "required": [
+                    "Address1"
+                ],
                     "properties": {
                 "Address1": {
                     "type": "string",
@@ -558,7 +719,9 @@
         },
         "Location": {
             "description": "Model for Location",
-                "required": ["City"],
+                "required": [
+                    "City"
+                ],
                     "properties": {
                 "City": {
                     "type": "string",
@@ -575,8 +738,10 @@
             }
         }
     },
-    "securityDefinitions": { },
-    "security": [],
+    "securityDefinitions": {
+    },
+    "security": [
+    ],
         "tags": [
             {
                 "name": "Locations",
@@ -589,6 +754,10 @@
             {
                 "name": "Smartsheet",
                 "description": "Operations about Smartsheet"
+            },
+            {
+                "name": "Utilities",
+                "description": "Operations about Utilities"
             }
         ]
 }
