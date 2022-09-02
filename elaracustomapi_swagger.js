@@ -109,6 +109,7 @@
                     }
                 },
                 "security": [
+
                 ]
             }
         },
@@ -148,6 +149,7 @@
                     }
                 },
                 "security": [
+
                 ]
             }
         },
@@ -208,6 +210,7 @@
                     }
                 },
                 "security": [
+
                 ]
             }
         },
@@ -257,6 +260,7 @@
                     }
                 },
                 "security": [
+
                 ]
             }
         },
@@ -292,6 +296,45 @@
                     }
                 },
                 "security": [
+
+                ]
+            }
+        },
+        "/smartsheet/PayorListWithTimelyFiling": {
+            "get": {
+                "tags": [
+                    "Smartsheet"
+                ],
+                    "description": "Payor list with timely filing",
+                        "operationId": "PayorListWithTimelyFiling",
+                            "produces": [
+                                "application/json"
+                            ],
+                                "responses": {
+                    "200": {
+                        "description": "OK",
+                            "schema": {
+                            "type": "array",
+                                "items": {
+                                "$ref": "#/definitions/PayorListWithTimelyFiling"
+                            }
+                        },
+                        "examples": {
+                            "application/json": [
+                                {
+                                    "Name": "AETNA COMMERCIAL",
+                                    "TimelyFiling": null
+                                },
+                                {
+                                    "Name": "AETNA MEDICARE ADVANTAGE FFS",
+                                    "TimelyFiling": null
+                                }
+                            ]
+                        }
+                    }
+                },
+                "security": [
+
                 ]
             }
         },
@@ -379,6 +422,7 @@
                     }
                 },
                 "security": [
+
                 ]
             }
         },
@@ -412,6 +456,7 @@
                     }
                 },
                 "security": [
+
                 ]
             }
         },
@@ -458,11 +503,28 @@
                     }
                 },
                 "security": [
+
                 ]
             }
         }
     },
     "definitions": {
+        "PayorListWithTimelyFiling": {
+            "description": "Model for PayorListWithTimelyFiling",
+                "required": [
+                    "Name"
+                ],
+                    "properties": {
+                "Name": {
+                    "type": "string",
+                        "x-example": "AETNA COMMERCIAL"
+                },
+                "TimelyFiling": {
+                    "type": "string",
+                        "x-example": ""
+                }
+            }
+        },
         "ParseXls": {
             "description": "Model for ParseXls",
                 "required": [
@@ -739,8 +801,10 @@
         }
     },
     "securityDefinitions": {
+
     },
     "security": [
+
     ],
         "tags": [
             {
