@@ -301,7 +301,7 @@
             }
         },
         "/smartsheet/PayorListWithTimelyFiling": {
-            "get": {
+            "post": {
                 "tags": [
                     "Smartsheet"
                 ],
