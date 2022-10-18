@@ -2,10 +2,10 @@
     "swagger": "2.0",
         "info": {
         "title": "Elara Custom Api",
-            "description": "API for elara-custom-api.herokuapp.com",
+            "description": "API for elaradevapi.azurewebsites.net",
                 "version": "0.0.0"
     },
-    "host": "elara-custom-api.herokuapp.com",
+    "host": "elaradevapi.azurewebsites.net",
         "schemes": [
             "https"
         ],
