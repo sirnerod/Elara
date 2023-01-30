@@ -348,7 +348,7 @@
                                 {
                                     "Status": "Active",
                                     "Payor": "Aetna Better Health Kansas",
-                                    "HS_R\u0026B": "R\u0026B",
+                                    "HS_R_B": "R\u0026B",
                                     "HCHB_Payor_Type": "Medicaid Room and Board",
                                     "HCHB_Payor_Source": "Aetna Better Health Kansas",
                                     "Goes_to_Field_Report": "Yes",
@@ -356,7 +356,7 @@
                                     "Branches": "TPH, LEH",
                                     "Branches__New_": "LEH, TPH",
                                     "Contracted": "Yes",
-                                    "R\u0026B_Rate": "95% KS Facility Rates",
+                                    "R_B_Rate": "95% KS Facility Rates",
                                     "Routine_Home_Care": "N/A",
                                     "Continuous_Home_Care": "N/A",
                                     "Inpatient_Respite": "N/A",
@@ -367,7 +367,7 @@
                                 {
                                     "Status": "Active",
                                     "Payor": "Aetna Better Health Kansas",
-                                    "HS_R\u0026B": "HS",
+                                    "HS_R_B": "HS",
                                     "HCHB_Payor_Type": "Medicaid",
                                     "HCHB_Payor_Source": "Aetna Better Health Kansas",
                                     "Goes_to_Field_Report": "Yes",
@@ -725,6 +725,10 @@
                     "type": "string",
                         "x-example": "Medicaid Room and Board"
                 },
+                "HS_R_B": {
+                    "type": "string",
+                        "x-example": "R\u0026B"
+                },
                 "Id": {
                     "type": "integer",
                         "format": "int32",
@@ -742,6 +746,10 @@
                 "Payor": {
                     "type": "string",
                         "x-example": "Aetna Better Health Kansas"
+                },
+                "R_B_Rate": {
+                    "type": "string",
+                        "x-example": "95% KS Facility Rates"
                 },
                 "Routine_Home_Care": {
                     "type": "string",
