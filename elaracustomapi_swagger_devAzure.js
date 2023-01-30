@@ -2,7 +2,7 @@
     "swagger": "2.0",
         "info": {
         "title": "Elara Custom Api",
-            "description": "API for elaradevapi.azurewebsites.net",
+            "description": "API for elara-custom-api.herokuapp.com",
                 "version": "0.0.0"
     },
     "host": "elaradevapi.azurewebsites.net",
@@ -204,6 +204,177 @@
                                     "region": "Elara Caring",
                                     "payor": "Aetna",
                                     "hchb": "AETNA MEDICARE ADVANTAGE FFS"
+                                }
+                            ]
+                        }
+                    }
+                },
+                "security": [
+
+                ]
+            }
+        },
+        "/smartsheet/HOSHCHBPayorList": {
+            "post": {
+                "tags": [
+                    "Smartsheet"
+                ],
+                    "description": "HOS HCHB Payor List",
+                        "operationId": "HOSHCHBPayorList",
+                            "consumes": [
+                                "application/x-www-form-urlencoded"
+                            ],
+                                "produces": [
+                                    "application/json"
+                                ],
+                                    "parameters": [
+                                        {
+                                            "name": "payor",
+                                            "in": "formData",
+                                            "description": "payor",
+                                            "required": true,
+                                            "type": "string",
+                                            "x-example": ""
+                                        }
+                                    ],
+                                        "responses": {
+                    "200": {
+                        "description": "OK",
+                            "schema": {
+                            "type": "array",
+                                "items": {
+                                "$ref": "#/definitions/HchbPayorList"
+                            }
+                        },
+                        "examples": {
+                            "application/json": [
+                                {
+                                    "region": "Elara Caring",
+                                    "payor": "Aetna",
+                                    "hchb": "AETNA COMMERCIAL"
+                                },
+                                {
+                                    "region": "Elara Caring",
+                                    "payor": "Aetna",
+                                    "hchb": "AETNA MEDICARE ADVANTAGE FFS"
+                                }
+                            ]
+                        }
+                    }
+                },
+                "security": [
+
+                ]
+            }
+        },
+        "/smartsheet/HOSPayorList": {
+            "post": {
+                "tags": [
+                    "Smartsheet"
+                ],
+                    "description": "Hos payor list",
+                        "operationId": "HOSPayorList",
+                            "produces": [
+                                "application/json"
+                            ],
+                                "responses": {
+                    "200": {
+                        "description": "OK",
+                            "schema": {
+                            "$ref": "#/definitions/Payorlist"
+                        },
+                        "examples": {
+                            "application/json": [
+                                {
+                                    "name": "Aetna Better Health Kansas"
+                                },
+                                {
+                                    "name": "Aetna Better Health Michigan"
+                                }
+                            ]
+                        }
+                    }
+                },
+                "security": [
+
+                ]
+            }
+        },
+        "/smartsheet/HOSPayorMatrix": {
+            "post": {
+                "tags": [
+                    "Smartsheet"
+                ],
+                    "description": "HOS Payor Matrix",
+                        "operationId": "HOSPayorMatrix",
+                            "consumes": [
+                                "application/x-www-form-urlencoded"
+                            ],
+                                "produces": [
+                                    "application/json"
+                                ],
+                                    "parameters": [
+                                        {
+                                            "name": "Payor",
+                                            "in": "formData",
+                                            "description": "Payor",
+                                            "required": false,
+                                            "type": "string",
+                                            "x-example": ""
+                                        },
+                                        {
+                                            "name": "HCHB_Payor_Source",
+                                            "in": "formData",
+                                            "description": "HCHB_Payor_Source",
+                                            "required": false,
+                                            "type": "string",
+                                            "x-example": ""
+                                        }
+                                    ],
+                                        "responses": {
+                    "200": {
+                        "description": "OK",
+                            "schema": {
+                            "type": "array",
+                                "items": {
+                                "$ref": "#/definitions/HosPayorMatrix"
+                            }
+                        },
+                        "examples": {
+                            "application/json": [
+                                {
+                                    "Status": "Active",
+                                    "Payor": "Aetna Better Health Kansas",
+                                    "HS_R\u0026B": "R\u0026B",
+                                    "HCHB_Payor_Type": "Medicaid Room and Board",
+                                    "HCHB_Payor_Source": "Aetna Better Health Kansas",
+                                    "Goes_to_Field_Report": "Yes",
+                                    "Agency": "Great Lakes",
+                                    "Branches": "TPH, LEH",
+                                    "Branches__New_": "LEH, TPH",
+                                    "Contracted": "Yes",
+                                    "R\u0026B_Rate": "95% KS Facility Rates",
+                                    "Routine_Home_Care": "N/A",
+                                    "Continuous_Home_Care": "N/A",
+                                    "Inpatient_Respite": "N/A",
+                                    "General_Inpatient": "N/A",
+                                    "Modified_Date": "2022-01-04T15:47:07Z",
+                                    "Id": 0
+                                },
+                                {
+                                    "Status": "Active",
+                                    "Payor": "Aetna Better Health Kansas",
+                                    "HS_R\u0026B": "HS",
+                                    "HCHB_Payor_Type": "Medicaid",
+                                    "HCHB_Payor_Source": "Aetna Better Health Kansas",
+                                    "Goes_to_Field_Report": "Yes",
+                                    "Agency": "Great Lakes",
+                                    "Branches": "TPH, LEH",
+                                    "Branches__New_": "LEH, TPH",
+                                    "Contracted": "Yes",
+                                    "Filing_Deadline": "180 Days",
+                                    "Modified_Date": "2022-01-13T16:06:38Z",
+                                    "Id": 1
                                 }
                             ]
                         }
@@ -509,6 +680,76 @@
         }
     },
     "definitions": {
+        "HosPayorMatrix": {
+            "description": "Model for HosPayorMatrix",
+                "required": [
+                    "Agency"
+                ],
+                    "properties": {
+                "Agency": {
+                    "type": "string",
+                        "x-example": "Great Lakes"
+                },
+                "Branches": {
+                    "type": "string",
+                        "x-example": "TPH, LEH"
+                },
+                "Branches__New_": {
+                    "type": "string",
+                        "x-example": "LEH, TPH"
+                },
+                "Continuous_Home_Care": {
+                    "type": "string",
+                        "x-example": "N/A"
+                },
+                "Contracted": {
+                    "type": "string",
+                        "x-example": "Yes"
+                },
+                "General_Inpatient": {
+                    "type": "string",
+                        "x-example": "N/A"
+                },
+                "Goes_to_Field_Report": {
+                    "type": "string",
+                        "x-example": "Yes"
+                },
+                "HCHB_Payor_Source": {
+                    "type": "string",
+                        "x-example": "Aetna Better Health Kansas"
+                },
+                "HCHB_Payor_Type": {
+                    "type": "string",
+                        "x-example": "Medicaid Room and Board"
+                },
+                "Id": {
+                    "type": "integer",
+                        "format": "int32",
+                            "x-example": "0"
+                },
+                "Inpatient_Respite": {
+                    "type": "string",
+                        "x-example": "N/A"
+                },
+                "Modified_Date": {
+                    "type": "string",
+                        "format": "date-time",
+                            "x-example": "2022-01-04T15:47:07Z"
+                },
+                "Payor": {
+                    "type": "string",
+                        "x-example": "Aetna Better Health Kansas"
+                },
+                "Routine_Home_Care": {
+                    "type": "string",
+                        "x-example": "N/A"
+                },
+                "Status": {
+                    "type": "string",
+                        "x-example": "Active"
+                }
+            }
+        },
         "PayorListWithTimelyFiling": {
             "description": "Model for PayorListWithTimelyFiling",
                 "required": [
@@ -818,10 +1059,6 @@
             {
                 "name": "Smartsheet",
                 "description": "Operations about Smartsheet"
-            },
-            {
-                "name": "Utilities",
-                "description": "Operations about Utilities"
             }
         ]
 }
