@@ -281,7 +281,10 @@
                     "200": {
                         "description": "OK",
                             "schema": {
-                            "$ref": "#/definitions/Payorlist"
+                            "type": "array",
+                                "items": {
+                                "$ref": "#/definitions/Payorlist"
+                            }
                         },
                         "examples": {
                             "application/json": [
