@@ -108,9 +108,7 @@
                         }
                     }
                 },
-                "security": [
-
-                ]
+                "security": []
             }
         },
         "/locations/getzipcodeinformation/{zipcode}": {
@@ -148,9 +146,7 @@
                         }
                     }
                 },
-                "security": [
-
-                ]
+                "security": []
             }
         },
         "/smartsheet/HCHBPayorList": {
@@ -209,9 +205,7 @@
                         }
                     }
                 },
-                "security": [
-
-                ]
+                "security": []
             }
         },
         "/smartsheet/HOSHCHBPayorList": {
@@ -262,9 +256,7 @@
                         }
                     }
                 },
-                "security": [
-
-                ]
+                "security": []
             }
         },
         "/smartsheet/HOSPayorList": {
@@ -298,9 +290,7 @@
                         }
                     }
                 },
-                "security": [
-
-                ]
+                "security": []
             }
         },
         "/smartsheet/HOSPayorMatrix": {
@@ -348,7 +338,7 @@
                                 {
                                     "Status": "Active",
                                     "Payor": "Aetna Better Health Kansas",
-                                    "HS_R_B": "R\u0026B",
+                                    "HS_R_B": "R&B",
                                     "HCHB_Payor_Type": "Medicaid Room and Board",
                                     "HCHB_Payor_Source": "Aetna Better Health Kansas",
                                     "Goes_to_Field_Report": "Yes",
@@ -383,9 +373,7 @@
                         }
                     }
                 },
-                "security": [
-
-                ]
+                "security": []
             }
         },
         "/utilities/parseXLS": {
@@ -433,9 +421,7 @@
                         }
                     }
                 },
-                "security": [
-
-                ]
+                "security": []
             }
         },
         "/smartsheet/payorlist": {
@@ -469,9 +455,7 @@
                         }
                     }
                 },
-                "security": [
-
-                ]
+                "security": []
             }
         },
         "/smartsheet/PayorListWithTimelyFiling": {
@@ -507,9 +491,7 @@
                         }
                     }
                 },
-                "security": [
-
-                ]
+                "security": []
             }
         },
         "/smartsheet/PayorMatrix": {
@@ -595,9 +577,7 @@
                         }
                     }
                 },
-                "security": [
-
-                ]
+                "security": []
             }
         },
         "/smartsheet/RegionList": {
@@ -629,9 +609,7 @@
                         }
                     }
                 },
-                "security": [
-
-                ]
+                "security": []
             }
         },
         "/smartsheet/RegionPayorList": {
@@ -676,9 +654,7 @@
                         }
                     }
                 },
-                "security": [
-
-                ]
+                "security": []
             }
         }
     },
@@ -692,6 +668,14 @@
                 "Agency": {
                     "type": "string",
                         "x-example": "Great Lakes"
+                },
+                "Authorization_Details": {
+                    "type": "string",
+                        "x-example": ""
+                },
+                "Authorization_Required": {
+                    "type": "string",
+                        "x-example": ""
                 },
                 "Branches": {
                     "type": "string",
@@ -708,6 +692,26 @@
                 "Contracted": {
                     "type": "string",
                         "x-example": "Yes"
+                },
+                "Data_HCHB_Updated": {
+                    "type": "string",
+                        "x-example": ""
+                },
+                "Effective_Date": {
+                    "type": "string",
+                        "x-example": ""
+                },
+                "Electronic_Payor_ID": {
+                    "type": "string",
+                        "x-example": ""
+                },
+                "Filing_Deadline": {
+                    "type": "string",
+                        "x-example": ""
+                },
+                "Future_Effective_Date": {
+                    "type": "string",
+                        "x-example": ""
                 },
                 "General_Inpatient": {
                     "type": "string",
@@ -727,7 +731,7 @@
                 },
                 "HS_R_B": {
                     "type": "string",
-                        "x-example": "R\u0026B"
+                        "x-example": "R&B"
                 },
                 "Id": {
                     "type": "integer",
@@ -747,9 +751,17 @@
                     "type": "string",
                         "x-example": "Aetna Better Health Kansas"
                 },
+                "Phone_Number": {
+                    "type": "string",
+                        "x-example": ""
+                },
                 "R_B_Rate": {
                     "type": "string",
                         "x-example": "95% KS Facility Rates"
+                },
+                "Retro_Auth": {
+                    "type": "string",
+                        "x-example": ""
                 },
                 "Routine_Home_Care": {
                     "type": "string",
@@ -758,6 +770,10 @@
                 "Status": {
                     "type": "string",
                         "x-example": "Active"
+                },
+                "Termination_Date": {
+                    "type": "string",
+                        "x-example": ""
                 }
             }
         },
@@ -1052,12 +1068,8 @@
             }
         }
     },
-    "securityDefinitions": {
-
-    },
-    "security": [
-
-    ],
+    "securityDefinitions": { },
+    "security": [],
         "tags": [
             {
                 "name": "Locations",
