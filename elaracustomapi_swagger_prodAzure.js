@@ -5,7 +5,7 @@
             "description": "API for elara-custom-api.herokuapp.com",
                 "version": "0.0.0"
     },
-    "host": "elaradevapi.azurewebsites.net",
+    "host": "elaraprodapi.azurewebsites.net",
         "schemes": [
             "https"
         ],
@@ -108,7 +108,9 @@
                         }
                     }
                 },
-                "security": []
+                "security": [
+
+                ]
             }
         },
         "/locations/getzipcodeinformation/{zipcode}": {
@@ -146,7 +148,9 @@
                         }
                     }
                 },
-                "security": []
+                "security": [
+
+                ]
             }
         },
         "/smartsheet/HCHBPayorList": {
@@ -205,7 +209,9 @@
                         }
                     }
                 },
-                "security": []
+                "security": [
+
+                ]
             }
         },
         "/smartsheet/HOSHCHBPayorList": {
@@ -256,7 +262,9 @@
                         }
                     }
                 },
-                "security": []
+                "security": [
+
+                ]
             }
         },
         "/smartsheet/HOSPayorList": {
@@ -290,7 +298,9 @@
                         }
                     }
                 },
-                "security": []
+                "security": [
+
+                ]
             }
         },
         "/smartsheet/HOSPayorMatrix": {
@@ -322,6 +332,22 @@
                                             "required": false,
                                             "type": "string",
                                             "x-example": ""
+                                        },
+                                        {
+                                            "name": "Branches",
+                                            "in": "formData",
+                                            "description": "Branches",
+                                            "required": false,
+                                            "type": "string",
+                                            "x-example": ""
+                                        },
+                                        {
+                                            "name": "Branches__New_",
+                                            "in": "formData",
+                                            "description": "Branches__New_",
+                                            "required": false,
+                                            "type": "string",
+                                            "x-example": ""
                                         }
                                     ],
                                         "responses": {
@@ -338,7 +364,7 @@
                                 {
                                     "Status": "Active",
                                     "Payor": "Aetna Better Health Kansas",
-                                    "HS_R_B": "R&B",
+                                    "HS_R_B": "R\u0026B",
                                     "HCHB_Payor_Type": "Medicaid Room and Board",
                                     "HCHB_Payor_Source": "Aetna Better Health Kansas",
                                     "Goes_to_Field_Report": "Yes",
@@ -373,7 +399,9 @@
                         }
                     }
                 },
-                "security": []
+                "security": [
+
+                ]
             }
         },
         "/utilities/parseXLS": {
@@ -421,7 +449,9 @@
                         }
                     }
                 },
-                "security": []
+                "security": [
+
+                ]
             }
         },
         "/smartsheet/payorlist": {
@@ -455,7 +485,9 @@
                         }
                     }
                 },
-                "security": []
+                "security": [
+
+                ]
             }
         },
         "/smartsheet/PayorListWithTimelyFiling": {
@@ -491,7 +523,9 @@
                         }
                     }
                 },
-                "security": []
+                "security": [
+
+                ]
             }
         },
         "/smartsheet/PayorMatrix": {
@@ -577,7 +611,9 @@
                         }
                     }
                 },
-                "security": []
+                "security": [
+
+                ]
             }
         },
         "/smartsheet/RegionList": {
@@ -609,7 +645,9 @@
                         }
                     }
                 },
-                "security": []
+                "security": [
+
+                ]
             }
         },
         "/smartsheet/RegionPayorList": {
@@ -654,7 +692,9 @@
                         }
                     }
                 },
-                "security": []
+                "security": [
+
+                ]
             }
         }
     },
@@ -731,7 +771,7 @@
                 },
                 "HS_R_B": {
                     "type": "string",
-                        "x-example": "R&B"
+                        "x-example": "R\u0026B"
                 },
                 "Id": {
                     "type": "integer",
@@ -1068,8 +1108,12 @@
             }
         }
     },
-    "securityDefinitions": { },
-    "security": [],
+    "securityDefinitions": {
+
+    },
+    "security": [
+
+    ],
         "tags": [
             {
                 "name": "Locations",
