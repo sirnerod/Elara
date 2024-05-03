@@ -5,7 +5,7 @@
             "description": "API for elaraprodapi.azurewebsites.net",
                 "version": "0.0.0"
     },
-    "host": "elaradevapi.azurewebsites.net",
+    "host": "elaraprodapi.azurewebsites.net",
         "schemes": [
             "https"
         ],
@@ -108,9 +108,7 @@
                         }
                     }
                 },
-                "security": [
-
-                ]
+                "security": []
             }
         },
         "/locations/getzipcodeinformation/{zipcode}": {
@@ -148,9 +146,7 @@
                         }
                     }
                 },
-                "security": [
-
-                ]
+                "security": []
             }
         },
         "/smartsheet/HCHBPayorList": {
@@ -209,9 +205,7 @@
                         }
                     }
                 },
-                "security": [
-
-                ]
+                "security": []
             }
         },
         "/smartsheet/HOSHCHBPayorList": {
@@ -262,9 +256,7 @@
                         }
                     }
                 },
-                "security": [
-
-                ]
+                "security": []
             }
         },
         "/smartsheet/HOSPayorList": {
@@ -298,9 +290,7 @@
                         }
                     }
                 },
-                "security": [
-
-                ]
+                "security": []
             }
         },
         "/smartsheet/HOSPayorMatrix": {
@@ -364,7 +354,7 @@
                                 {
                                     "Status": "Active",
                                     "Payor": "Aetna Better Health Kansas",
-                                    "HS_R_B": "R\u0026B",
+                                    "HS_R_B": "R&B",
                                     "HCHB_Payor_Type": "Medicaid Room and Board",
                                     "HCHB_Payor_Source": "Aetna Better Health Kansas",
                                     "Goes_to_Field_Report": "Yes",
@@ -399,9 +389,7 @@
                         }
                     }
                 },
-                "security": [
-
-                ]
+                "security": []
             }
         },
         "/utilities/parseXLS": {
@@ -449,9 +437,7 @@
                         }
                     }
                 },
-                "security": [
-
-                ]
+                "security": []
             }
         },
         "/smartsheet/payorlist": {
@@ -485,9 +471,7 @@
                         }
                     }
                 },
-                "security": [
-
-                ]
+                "security": []
             }
         },
         "/smartsheet/PayorListWithTimelyFiling": {
@@ -523,9 +507,7 @@
                         }
                     }
                 },
-                "security": [
-
-                ]
+                "security": []
             }
         },
         "/smartsheet/PayorMatrix": {
@@ -587,17 +569,17 @@
                         "examples": {
                             "application/json": [
                                 {
-                                    "Primary": "Aetna_Elara Caring National_10.15.20",
+                                    "Primary": "Aetna_Elara Caring National Amendment_04.15.23",
                                     "Payor": "Aetna",
-                                    "HCHB_Payor_Type": "Medicare Advantage - FFS",
-                                    "HCHB_Payor": "AETNA MEDICARE ADVANTAGE FFS",
-                                    "Payor_Class": "Medicare Advantage",
+                                    "HCHB_Payor_Type": "Commercial Insurance",
+                                    "HCHB_Payor": "AETNA COMMERCIAL",
+                                    "Payor_Class": "Commercial",
                                     "Reimbursement_Method_____Bill_": "Fee for Service (FFS)",
-                                    "Branches": "A01, A02, A03, A04, A05, A06, A07, A08, A09, A10, A11, A12, A13, A14,  ABI, ADR, BAR, BAT, BAU, BCH, BCP, BCR, BEN, BHH, BHO, BIF, BIG, BME, BMN, BNH, BNT,BPO,  BRH, BRI, BR1, BRR, BSA, BSH, BTO,BWB, BWN, BWO,  B43, CHI, CHL, COP, CPE, CRO,CV2, C01, C04, C05, C07, C08, C09, C10, C11, C12, C13, C14, C15, C17, C18, C19, C21, C24, C25, C26, C27, C42, C50, DK2, EDW, ELK, ENI, FOR, FRA, GRA, G62, HC5, HMD, HUG, HXL, IND, IRV, JAC,JP1,  J37, J41,KIT, KOK, LAF, LAN, LIV, L33, MEN, MET,MK1, MN1, MNR, MON,  M34, NC1, NEW, NHV, NTN, OCK, PAL, PA2, PUR, P01, P02, P03, P04, P05, P16, RUS, SAG, SAW, SBE, SB1,  SHL, SPF, STA, STJ, S10, S61, TER, TLA, TOL, T17, T36, T37, T38, WBY, WIN, WND, WOR",
-                                    "Plan_Products__PPO__HMO__MA__W": "Medicare Advantage",
+                                    "Branches": "A01, A04, A05, A06, A07, A09, A12, A13, A14, ADR, AKN, AL1, BAT, BCH, BCP, BCR,  BHH, BHO, BIF, BIG, BME, BMN, BNH, BNT,BPO,  BRH, BRI, BR1, BRR, BSH, BTO,BWB, BWN, BWO, C01, C04, C05, C07, C08, C09, C10, C11, C14, C15, C17, C18, C19, C21, C24, C25, C26, C42, C50,CHI, CHL, CPE, CRO, DK2, EDW,  ELK, ENI, FOR, FRA, G62, GRA,  HMD, HUG, HXL, IND, IRV, J37, J41, JAC, KIT, KOB, KOK,  LAF, LAN, LIV, L33, M34, MEN, MET, MK1, MN1, NC1, NEW, NHV, NTN,  OKC, P01, P02, P03, P04, P05, P16, PA2, PAL, PUR, RH1, RUS, S10, S61, SA1, SAG,  SAW, SB1, SBE, SG1, SHL, SPF, STA, STJ, T36, T37, T38, TER, TLA, TOL,  WBY, WIN, WND, WOR",
+                                    "Plan_Products__PPO__HMO__MA__W": "Commercial: HMO, PPO, EPO, POS, QPOS, Elect Choice, Open  Choice,  Managed  Choice  POS,  Aetna  Choice  POS  II,  Aetna  Select,  Aetna  Student  Health,  indemnity  plans  with network   incentives,   Aetna   Signature   Administrators®,   Joint   Claims   Administration, Meritain/Meritain   Shared Administrative Services, Passport to Healthcare®and National Advantage Program, Worker's Comp, Auto, Medical Rental Product (First Health), Cofinity, TPA- Boon Chapman",
                                     "Timely_Filing_____only": "180",
-                                    "OASIS": "Yes",
-                                    "Face_to_Face": "Yes",
+                                    "OASIS": "No",
+                                    "Face_to_Face": "No",
                                     "National_or_State": "National",
                                     "Region": "Elara Caring",
                                     "State": "National",
@@ -605,15 +587,32 @@
                                     "Contract_Effective_Date": "2020-10-15",
                                     "Appeal_Timeframe": "180",
                                     "Rev_Code_HCPC": "CMS",
-                                    "Related_Payors": "ID Numbers: PBP –Aetna MA (Coventry) H –Aetna MA"
+                                    "Additional_HCHB_Payors": "TPA - BOON-CHAPMANAETNA - BPD",
+                                    "Id": 0
+                                },
+                                {
+                                    "Primary": "DENOVE USE",
+                                    "Payor": "Aetna",
+                                    "HCHB_Payor_Type": "Commercial Insurance",
+                                    "HCHB_Payor": "AETNA COMMERCIAL",
+                                    "Payor_Class": "Commercial",
+                                    "Reimbursement_Method_____Bill_": "Fee for Service (FFS)",
+                                    "Branches": "CLY, DEF, KC1",
+                                    "Plan_Products__PPO__HMO__MA__W": "Commercial: HMO, PPO, EPO, POS, QPOS, Elect Choice, Open  Choice,  Managed  Choice  POS,  Aetna  Choice  POS  II,  Aetna  Select,  Aetna  Student  Health,  indemnity  plans  with network   incentives,   Aetna   Signature   Administrators®,   Joint   Claims   Administration, Meritain/Meritain   Shared Administrative Services, Passport to Healthcare®and National Advantage Program, Worker's Comp, Auto, Medical Rental Product (First Health), Cofinity, TPA- Boon Chapman",
+                                    "Timely_Filing_____only": "180",
+                                    "National_or_State": "National",
+                                    "Region": "Elara Caring",
+                                    "State": "National",
+                                    "Entity": "Elara Caring",
+                                    "Appeal_Timeframe": "180",
+                                    "Additional_HCHB_Payors": "TPA - BOON-CHAPMANAETNA - BPD",
+                                    "Id": 2
                                 }
                             ]
                         }
                     }
                 },
-                "security": [
-
-                ]
+                "security": []
             }
         },
         "/smartsheet/RegionList": {
@@ -645,9 +644,7 @@
                         }
                     }
                 },
-                "security": [
-
-                ]
+                "security": []
             }
         },
         "/smartsheet/RegionPayorList": {
@@ -692,185 +689,21 @@
                         }
                     }
                 },
-                "security": [
-
-                ]
+                "security": []
             }
         }
     },
     "definitions": {
-        "HosPayorMatrix": {
-            "description": "Model for HosPayorMatrix",
-                "required": [
-                    "Agency"
-                ],
-                    "properties": {
-                "Agency": {
-                    "type": "string",
-                        "x-example": "Great Lakes"
-                },
-                "Authorization_Details": {
-                    "type": "string",
-                        "x-example": ""
-                },
-                "Authorization_Required": {
-                    "type": "string",
-                        "x-example": ""
-                },
-                "Branches": {
-                    "type": "string",
-                        "x-example": "TPH, LEH"
-                },
-                "Branches__New_": {
-                    "type": "string",
-                        "x-example": "LEH, TPH"
-                },
-                "Continuous_Home_Care": {
-                    "type": "string",
-                        "x-example": "N/A"
-                },
-                "Contracted": {
-                    "type": "string",
-                        "x-example": "Yes"
-                },
-                "Data_HCHB_Updated": {
-                    "type": "string",
-                        "x-example": ""
-                },
-                "Effective_Date": {
-                    "type": "string",
-                        "x-example": ""
-                },
-                "Electronic_Payor_ID": {
-                    "type": "string",
-                        "x-example": ""
-                },
-                "Filing_Deadline": {
-                    "type": "string",
-                        "x-example": ""
-                },
-                "Future_Effective_Date": {
-                    "type": "string",
-                        "x-example": ""
-                },
-                "General_Inpatient": {
-                    "type": "string",
-                        "x-example": "N/A"
-                },
-                "Goes_to_Field_Report": {
-                    "type": "string",
-                        "x-example": "Yes"
-                },
-                "HCHB_Payor_Source": {
-                    "type": "string",
-                        "x-example": "Aetna Better Health Kansas"
-                },
-                "HCHB_Payor_Type": {
-                    "type": "string",
-                        "x-example": "Medicaid Room and Board"
-                },
-                "HS_R_B": {
-                    "type": "string",
-                        "x-example": "R\u0026B"
-                },
-                "Id": {
-                    "type": "integer",
-                        "format": "int32",
-                            "x-example": "0"
-                },
-                "Inpatient_Respite": {
-                    "type": "string",
-                        "x-example": "N/A"
-                },
-                "Modified_Date": {
-                    "type": "string",
-                        "format": "date-time",
-                            "x-example": "2022-01-04T15:47:07Z"
-                },
-                "Payor": {
-                    "type": "string",
-                        "x-example": "Aetna Better Health Kansas"
-                },
-                "Phone_Number": {
-                    "type": "string",
-                        "x-example": ""
-                },
-                "R_B_Rate": {
-                    "type": "string",
-                        "x-example": "95% KS Facility Rates"
-                },
-                "Retro_Auth": {
-                    "type": "string",
-                        "x-example": ""
-                },
-                "Routine_Home_Care": {
-                    "type": "string",
-                        "x-example": "N/A"
-                },
-                "Status": {
-                    "type": "string",
-                        "x-example": "Active"
-                },
-                "Termination_Date": {
-                    "type": "string",
-                        "x-example": ""
-                }
-            }
-        },
-        "PayorListWithTimelyFiling": {
-            "description": "Model for PayorListWithTimelyFiling",
-                "required": [
-                    "Name"
-                ],
-                    "properties": {
-                "Name": {
-                    "type": "string",
-                        "x-example": "AETNA COMMERCIAL"
-                },
-                "TimelyFiling": {
-                    "type": "string",
-                        "x-example": ""
-                }
-            }
-        },
-        "ParseXls": {
-            "description": "Model for ParseXls",
-                "required": [
-                    "SQLString"
-                ],
-                    "properties": {
-                "SQLString": {
-                    "type": "string",
-                        "x-example": "INSERT INTO dbo.test (PatientName,BranchCode) VALUES ( 'John Doe','A01'),( 'Jane Dawson','')"
-                },
-                "success": {
-                    "type": "boolean",
-                        "x-example": "true"
-                }
-            }
-        },
-        "XlsParser": {
-            "description": "Model for XlsParser",
-                "required": [
-                    "SQLString"
-                ],
-                    "properties": {
-                "SQLString": {
-                    "type": "string",
-                        "x-example": "INSERT INTO dbo.SQLTest (PatientName,BranchCode) VALUES ( 'John Doe','A01'),( 'Jane Dawson','')"
-                },
-                "success": {
-                    "type": "boolean",
-                        "x-example": "true"
-                }
-            }
-        },
         "PayorMatrix": {
             "description": "Model for PayorMatrix",
                 "required": [
-                    "Appeal_Timeframe"
+                    "Additional_HCHB_Payors"
                 ],
                     "properties": {
+                "Additional_HCHB_Payors": {
+                    "type": "string",
+                        "x-example": "TPA - BOON-CHAPMANAETNA - BPD"
+                },
                 "Appeal_Timeframe": {
                     "type": "string",
                         "x-example": "180"
@@ -963,6 +796,172 @@
                 "Timely_Filing_____only": {
                     "type": "string",
                         "x-example": "180"
+                }
+            }
+        },
+        "HosPayorMatrix": {
+            "description": "Model for HosPayorMatrix",
+                "required": [
+                    "Agency"
+                ],
+                    "properties": {
+                "Agency": {
+                    "type": "string",
+                        "x-example": "Great Lakes"
+                },
+                "Authorization_Details": {
+                    "type": "string",
+                        "x-example": ""
+                },
+                "Authorization_Required": {
+                    "type": "string",
+                        "x-example": ""
+                },
+                "Branches": {
+                    "type": "string",
+                        "x-example": "TPH, LEH"
+                },
+                "Branches__New_": {
+                    "type": "string",
+                        "x-example": "LEH, TPH"
+                },
+                "Continuous_Home_Care": {
+                    "type": "string",
+                        "x-example": "N/A"
+                },
+                "Contracted": {
+                    "type": "string",
+                        "x-example": "Yes"
+                },
+                "Data_HCHB_Updated": {
+                    "type": "string",
+                        "x-example": ""
+                },
+                "Effective_Date": {
+                    "type": "string",
+                        "x-example": ""
+                },
+                "Electronic_Payor_ID": {
+                    "type": "string",
+                        "x-example": ""
+                },
+                "Filing_Deadline": {
+                    "type": "string",
+                        "x-example": ""
+                },
+                "Future_Effective_Date": {
+                    "type": "string",
+                        "x-example": ""
+                },
+                "General_Inpatient": {
+                    "type": "string",
+                        "x-example": "N/A"
+                },
+                "Goes_to_Field_Report": {
+                    "type": "string",
+                        "x-example": "Yes"
+                },
+                "HCHB_Payor_Source": {
+                    "type": "string",
+                        "x-example": "Aetna Better Health Kansas"
+                },
+                "HCHB_Payor_Type": {
+                    "type": "string",
+                        "x-example": "Medicaid Room and Board"
+                },
+                "HS_R_B": {
+                    "type": "string",
+                        "x-example": "R&B"
+                },
+                "Id": {
+                    "type": "integer",
+                        "format": "int32",
+                            "x-example": "0"
+                },
+                "Inpatient_Respite": {
+                    "type": "string",
+                        "x-example": "N/A"
+                },
+                "Modified_Date": {
+                    "type": "string",
+                        "format": "date-time",
+                            "x-example": "2022-01-04T15:47:07Z"
+                },
+                "Payor": {
+                    "type": "string",
+                        "x-example": "Aetna Better Health Kansas"
+                },
+                "Phone_Number": {
+                    "type": "string",
+                        "x-example": ""
+                },
+                "R_B_Rate": {
+                    "type": "string",
+                        "x-example": "95% KS Facility Rates"
+                },
+                "Retro_Auth": {
+                    "type": "string",
+                        "x-example": ""
+                },
+                "Routine_Home_Care": {
+                    "type": "string",
+                        "x-example": "N/A"
+                },
+                "Status": {
+                    "type": "string",
+                        "x-example": "Active"
+                },
+                "Termination_Date": {
+                    "type": "string",
+                        "x-example": ""
+                }
+            }
+        },
+        "PayorListWithTimelyFiling": {
+            "description": "Model for PayorListWithTimelyFiling",
+                "required": [
+                    "Name"
+                ],
+                    "properties": {
+                "Name": {
+                    "type": "string",
+                        "x-example": "AETNA COMMERCIAL"
+                },
+                "TimelyFiling": {
+                    "type": "string",
+                        "x-example": ""
+                }
+            }
+        },
+        "ParseXls": {
+            "description": "Model for ParseXls",
+                "required": [
+                    "SQLString"
+                ],
+                    "properties": {
+                "SQLString": {
+                    "type": "string",
+                        "x-example": "INSERT INTO dbo.test (PatientName,BranchCode) VALUES ( 'John Doe','A01'),( 'Jane Dawson','')"
+                },
+                "success": {
+                    "type": "boolean",
+                        "x-example": "true"
+                }
+            }
+        },
+        "XlsParser": {
+            "description": "Model for XlsParser",
+                "required": [
+                    "SQLString"
+                ],
+                    "properties": {
+                "SQLString": {
+                    "type": "string",
+                        "x-example": "INSERT INTO dbo.SQLTest (PatientName,BranchCode) VALUES ( 'John Doe','A01'),( 'Jane Dawson','')"
+                },
+                "success": {
+                    "type": "boolean",
+                        "x-example": "true"
                 }
             }
         },
@@ -1108,12 +1107,8 @@
             }
         }
     },
-    "securityDefinitions": {
-
-    },
-    "security": [
-
-    ],
+    "securityDefinitions": { },
+    "security": [],
         "tags": [
             {
                 "name": "Locations",
